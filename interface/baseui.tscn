@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://ce14q743nf1jg"]
+[gd_scene load_steps=3 format=3 uid="uid://ce14q743nf1jg"]
 
 [ext_resource type="Theme" uid="uid://dqqxqjl6xhxrq" path="res://interface/basetheme.tres" id="1_pxxgi"]
+[ext_resource type="Script" uid="uid://bfsgcx6noivo3" path="res://interface/setSeed.gd" id="2_4mce8"]
 
 [node name="Root UI" type="Control"]
+texture_filter = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,7 +13,39 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_pxxgi")
 
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -196.0
+offset_top = -71.0
+offset_right = 196.0
+offset_bottom = 71.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+custom_minimum_size = Vector2(368, 0)
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+placeholder_text = "Seed"
+script = ExtResource("2_4mce8")
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "New game"

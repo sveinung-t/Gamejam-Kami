@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=12 format=3 uid="uid://dqqxqjl6xhxrq"]
+[gd_resource type="Theme" load_steps=13 format=3 uid="uid://dqqxqjl6xhxrq"]
 
 [ext_resource type="Texture2D" uid="uid://ylvqktlbc0id" path="res://interface/FantasyBorders/Panel/panel-027.png" id="1_87dbc"]
 [ext_resource type="Texture2D" uid="uid://bxwtww5gcs1e2" path="res://interface/FantasyBorders/Panel/panel-021.png" id="1_x3ogf"]
@@ -10,7 +10,7 @@ texture_margin_left = 17.0
 texture_margin_top = 17.0
 texture_margin_right = 17.0
 texture_margin_bottom = 17.0
-modulate_color = Color(0.247059, 0.247059, 0.247059, 0.247059)
+modulate_color = Color(0.18, 0.18, 0.18, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6wvjs"]
 texture = ExtResource("1_87dbc")
@@ -18,7 +18,7 @@ texture_margin_left = 17.0
 texture_margin_top = 17.0
 texture_margin_right = 17.0
 texture_margin_bottom = 17.0
-modulate_color = Color(0, 0, 0, 0.560784)
+modulate_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wbjro"]
 texture = ExtResource("1_87dbc")
@@ -26,7 +26,7 @@ texture_margin_left = 17.0
 texture_margin_top = 17.0
 texture_margin_right = 17.0
 texture_margin_bottom = 17.0
-modulate_color = Color(0, 0, 0, 0.560784)
+modulate_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wwpwl"]
 texture = ExtResource("1_87dbc")
@@ -34,7 +34,7 @@ texture_margin_left = 17.0
 texture_margin_top = 17.0
 texture_margin_right = 17.0
 texture_margin_bottom = 17.0
-modulate_color = Color(0.0588235, 0.0588235, 0.0588235, 0.498039)
+modulate_color = Color(0.121569, 0.121569, 0.121569, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_707oa"]
 texture = ExtResource("1_87dbc")
@@ -42,7 +42,7 @@ texture_margin_left = 17.0
 texture_margin_top = 17.0
 texture_margin_right = 17.0
 texture_margin_bottom = 17.0
-modulate_color = Color(0, 0, 0, 0.623529)
+modulate_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_on4mc"]
 texture = ExtResource("3_wwpwl")
@@ -50,9 +50,21 @@ texture_margin_left = 17.0
 texture_margin_top = 17.0
 texture_margin_right = 17.0
 texture_margin_bottom = 17.0
-modulate_color = Color(0, 0, 0, 0.498039)
+modulate_color = Color(0.12, 0.12, 0.12, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dlorh"]
+texture = ExtResource("3_wwpwl")
+texture_margin_left = 17.0
+texture_margin_top = 17.0
+texture_margin_right = 17.0
+texture_margin_bottom = 17.0
+modulate_color = Color(0.18, 0.18, 0.18, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_87dbc"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
 texture = ExtResource("1_x3ogf")
 texture_margin_left = 17.0
 texture_margin_top = 17.0
@@ -62,7 +74,7 @@ expand_margin_left = 12.0
 expand_margin_top = 12.0
 expand_margin_right = 12.0
 expand_margin_bottom = 12.0
-modulate_color = Color(1, 0.937255, 1, 0.498039)
+modulate_color = Color(0.247059, 0.247059, 0.247059, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hlcws"]
 texture = ExtResource("3_wwpwl")
@@ -79,5 +91,6 @@ Button/styles/hover = SubResource("StyleBoxTexture_wbjro")
 Button/styles/normal = SubResource("StyleBoxTexture_wwpwl")
 Button/styles/pressed = SubResource("StyleBoxTexture_707oa")
 LineEdit/styles/normal = SubResource("StyleBoxTexture_on4mc")
+LineEdit/styles/read_only = SubResource("StyleBoxTexture_dlorh")
 Panel/styles/panel = SubResource("StyleBoxTexture_87dbc")
 TextEdit/styles/normal = SubResource("StyleBoxTexture_hlcws")
