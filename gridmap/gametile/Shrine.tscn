@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://cya6phn0ltjfn"]
+
+[ext_resource type="PackedScene" uid="uid://cj5h8e4k3smky" path="res://models/FantasyTown/balconyWallFence.glb" id="4_x7u70"]
+[ext_resource type="PackedScene" uid="uid://dpkjv3rax5mpj" path="res://models/FantasyTown/chimneyBase.glb" id="5_efqdf"]
+[ext_resource type="PackedScene" uid="uid://b4s6k7bwm0hni" path="res://models/FantasyTown/balconyWall.glb" id="5_jvhtc"]
+[ext_resource type="PackedScene" uid="uid://b3jr8ucj4fqmv" path="res://models/FantasyTown/fenceGate.glb" id="6_jvhtc"]
+[ext_resource type="PackedScene" uid="uid://qtqi7f0h35ul" path="res://models/FantasyTown/bannerRed.glb" id="7_efqdf"]
+[ext_resource type="PackedScene" uid="uid://dytvmfo47dcsp" path="res://models/FantasyTown/roofHighGable.glb" id="7_jvhtc"]
+[ext_resource type="PackedScene" uid="uid://3xqf00tnq03j" path="res://models/FantasyTown/planks.glb" id="7_oal56"]
+
+[node name="Shrine" type="Node3D"]
+
+[node name="Structure" type="Node3D" parent="."]
+
+[node name="roofHighGable2" parent="Structure" instance=ExtResource("7_jvhtc")]
+transform = Transform3D(-4.80825e-08, 0, -1.2, 0, 0.5, 0, 1.1, 0, -5.24537e-08, 0, 0.95, 0)
+
+[node name="chimneyBase2" parent="Structure" instance=ExtResource("5_efqdf")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="fenceGate2" parent="Structure" instance=ExtResource("6_jvhtc")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="balconyWallFence2" parent="Structure" instance=ExtResource("4_x7u70")]
+
+[node name="balconyWallFence4" parent="Structure" instance=ExtResource("4_x7u70")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="balconyWallFence5" parent="Structure" instance=ExtResource("4_x7u70")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 0, 0, 0)
+
+[node name="balconyWall2" parent="Structure" instance=ExtResource("5_jvhtc")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="planks2" parent="Structure" instance=ExtResource("7_oal56")]
+
+[node name="bannerRed2" parent="Structure" instance=ExtResource("7_efqdf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.957795, -0.032881, 0)
+
+[node name="bannerRed3" parent="Structure" instance=ExtResource("7_efqdf")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.958, -0.033, 0)
+
+[node name="bannerRed4" parent="Structure" instance=ExtResource("7_efqdf")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -0.033, -0.958)
