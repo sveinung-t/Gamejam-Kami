@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://ce14q743nf1jg"]
 
 [ext_resource type="Theme" uid="uid://dqqxqjl6xhxrq" path="res://interface/basetheme.tres" id="1_pxxgi"]
-[ext_resource type="Script" uid="uid://nf03f1y50pi8" path="res://interface/new_game.gd" id="2_wwv3j"]
-[ext_resource type="Script" uid="uid://bmmchavv15s6q" path="res://interface/ToggleNewGame.gd" id="3_gr4bn"]
+[ext_resource type="Script" uid="uid://nf03f1y50pi8" path="res://interface/MainMenu.gd" id="2_gr4bn"]
+[ext_resource type="Script" uid="uid://bmmchavv15s6q" path="res://interface/ToggleMainMenu.gd" id="3_gr4bn"]
 
 [node name="Root UI" type="Control"]
 texture_filter = 1
@@ -14,7 +14,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_pxxgi")
 
-[node name="NewGame" type="PanelContainer" parent="."]
+[node name="MainMenu" type="PanelContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -27,42 +27,42 @@ offset_right = 196.0
 offset_bottom = 71.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("2_wwv3j")
+script = ExtResource("2_gr4bn")
 
-[node name="Panel" type="Panel" parent="NewGame"]
+[node name="Panel" type="Panel" parent="MainMenu"]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="NewGame"]
+[node name="MarginContainer" type="MarginContainer" parent="MainMenu"]
 layout_mode = 2
 theme_override_constants/margin_left = 12
 theme_override_constants/margin_top = 12
 theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 12
 
-[node name="VBoxContainer" type="VBoxContainer" parent="NewGame/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/MarginContainer"]
 custom_minimum_size = Vector2(368, 0)
 layout_mode = 2
 theme_override_constants/separation = 12
 
-[node name="Label" type="Label" parent="NewGame/MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="MainMenu/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 36
 text = "神 kami"
 horizontal_alignment = 1
 
-[node name="Seed" type="LineEdit" parent="NewGame/MarginContainer/VBoxContainer"]
+[node name="Seed" type="LineEdit" parent="MainMenu/MarginContainer/VBoxContainer"]
 layout_mode = 2
 placeholder_text = "種 Seed"
 
-[node name="Randomize" type="Button" parent="NewGame/MarginContainer/VBoxContainer"]
+[node name="Randomize" type="Button" parent="MainMenu/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "もう一度 Randomize"
 
-[node name="Newgame" type="Button" parent="NewGame/MarginContainer/VBoxContainer"]
+[node name="Newgame" type="Button" parent="MainMenu/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "始める New game"
 
-[node name="Exit" type="Button" parent="NewGame/MarginContainer/VBoxContainer"]
+[node name="Exit" type="Button" parent="MainMenu/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "出口 Exit"
 

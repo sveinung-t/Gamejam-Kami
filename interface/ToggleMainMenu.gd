@@ -1,6 +1,6 @@
 extends Button
 
-@onready var newgameMenu = $"../../../NewGame"
+@onready var newgameMenu = $"../../../MainMenu"
 
 func _ready() -> void:
 	self.pressed.connect(toggleMenu)
