@@ -10,6 +10,7 @@ func _ready() -> void:
 	setNewSeed()
 	randomizeBtn.pressed.connect(setNewSeed)
 	newgameBtn.pressed.connect(newGame)
+	exitBtn.pressed.connect(exitGame)
 	
 func setNewSeed() -> void:
 	rng.randomize()
@@ -20,3 +21,6 @@ func newGame() -> void:
 	rng.seed = seed.hash()
 	
 	print(rng.seed)
+
+func exitGame() -> void:
+	get_tree().quit()
