@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://dqqxqjl6xhxrq" path="res://interface/basetheme.tres" id="1_pxxgi"]
 
-[node name="Control" type="Control"]
+[node name="Root UI" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
