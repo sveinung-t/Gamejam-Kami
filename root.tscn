@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b447cbmqysnrm"]
 
-[ext_resource type="PackedScene" path="res://grid_scene.tscn" id="1_pq8q7"]
+[ext_resource type="PackedScene" uid="uid://da347hanmw0n2" path="res://grid_scene.tscn" id="1_pq8q7"]
 [ext_resource type="PackedScene" uid="uid://ce14q743nf1jg" path="res://interface/baseui.tscn" id="2_pyidc"]
 
 [node name="Root" type="Node3D"]
@@ -13,4 +13,4 @@ transform = Transform3D(1, 0, 0, 0, 0.78858, 0.614932, 0, -0.614932, 0.78858, 0,
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.127878, 0.99179, 0, -0.99179, 0.127878, 0, 11.7522, -0.0945975)
 
-[node name="Control" parent="." instance=ExtResource("2_pyidc")]
+[node name="Root UI" parent="." instance=ExtResource("2_pyidc")]
