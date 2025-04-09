@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cuj8af2wnhhqb"]
+
+[ext_resource type="PackedScene" uid="uid://bt03qb3oi11qv" path="res://models/NatureKit/cliff_blockHalf_rock.glb" id="1_jnp2x"]
+
+[node name="BaseTile" type="Node3D"]
+
+[node name="cliff_blockHalf_rock2" parent="." instance=ExtResource("1_jnp2x")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -0.9, 0)

@@ -1,0 +1,39 @@
+[gd_scene load_steps=10 format=3 uid="uid://5mdusql7ppnr"]
+
+[ext_resource type="PackedScene" uid="uid://cuj8af2wnhhqb" path="res://gridmap/tiles/BaseTile.tscn" id="1_cm4il"]
+[ext_resource type="PackedScene" uid="uid://bqk77e8icd21s" path="res://models/NatureKit/stone_tallC.glb" id="2_uiasq"]
+[ext_resource type="PackedScene" uid="uid://dff21a1gpvjwi" path="res://models/NatureKit/stone_tallJ.glb" id="3_u5tbx"]
+[ext_resource type="PackedScene" uid="uid://bmokrumj26not" path="res://models/NatureKit/stone_smallTopB.glb" id="4_6tr7e"]
+[ext_resource type="PackedScene" uid="uid://bqc7bmxfqodyn" path="res://models/NatureKit/stone_smallFlatA.glb" id="5_ydpsf"]
+[ext_resource type="PackedScene" uid="uid://c7bqnp8k5t7jl" path="res://models/NatureKit/stone_largeD.glb" id="6_g2v0a"]
+[ext_resource type="PackedScene" uid="uid://cqb0b17o13ywb" path="res://models/NatureKit/stone_largeB.glb" id="7_2e8ob"]
+[ext_resource type="PackedScene" uid="uid://c8naeapgiurh5" path="res://models/NatureKit/stone_largeA.glb" id="8_71l7x"]
+[ext_resource type="PackedScene" uid="uid://dbcx6sbxbmqe6" path="res://models/NatureKit/stone_smallC.glb" id="9_q2sj7"]
+
+[node name="Mountain" type="Node3D"]
+
+[node name="BaseTile" parent="." instance=ExtResource("1_cm4il")]
+
+[node name="stone_tallC2" parent="." instance=ExtResource("2_uiasq")]
+transform = Transform3D(1.73475, 0, 0, 0, 1.54417, 0, 0, 0, 2.24584, 0.0857488, -1.19209e-07, 0.105523)
+
+[node name="stone_tallJ2" parent="." instance=ExtResource("3_u5tbx")]
+transform = Transform3D(1.41395, 0, 0, 0, 1, 0, 0, 0, 1.30885, -0.5202, 0, 0.657345)
+
+[node name="stone_smallTopB2" parent="." instance=ExtResource("4_6tr7e")]
+transform = Transform3D(1.80631, 0, 0, 0, 3.0222, 0, 0, 0, 1.89378, -0.139118, 0, 0.416899)
+
+[node name="stone_smallFlatA2" parent="." instance=ExtResource("5_ydpsf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.675925, 0.050338, 0.55808)
+
+[node name="stone_largeD2" parent="." instance=ExtResource("6_g2v0a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.462155, -0.227839, -0.0714709)
+
+[node name="stone_largeB2" parent="." instance=ExtResource("7_2e8ob")]
+transform = Transform3D(0.904916, 0, -0.42559, 0, 1.6509, 0, 0.42559, 0, 0.904916, 0.259461, -0.281547, -0.414592)
+
+[node name="stone_largeA2" parent="." instance=ExtResource("8_71l7x")]
+transform = Transform3D(0.867496, 0, 0.497443, 0, 1, 0, -0.497443, 0, 0.867496, -0.2064, -0.0331372, -0.388086)
+
+[node name="stone_smallC2" parent="." instance=ExtResource("9_q2sj7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.652658, 0.00700402, -0.0118237)

@@ -1,16 +1,32 @@
-[gd_scene load_steps=3 format=3 uid="uid://b447cbmqysnrm"]
+[gd_scene load_steps=6 format=3 uid="uid://b447cbmqysnrm"]
 
 [ext_resource type="PackedScene" uid="uid://da347hanmw0n2" path="res://grid_scene.tscn" id="1_pq8q7"]
 [ext_resource type="PackedScene" uid="uid://ce14q743nf1jg" path="res://interface/baseui.tscn" id="2_pyidc"]
+[ext_resource type="PackedScene" uid="uid://cya6phn0ltjfn" path="res://gridmap/tiles/Shrine.tscn" id="3_vvh5c"]
+[ext_resource type="PackedScene" uid="uid://ceovhlbkoy3gr" path="res://gridmap/tiles/Forest.tscn" id="4_28aoi"]
+[ext_resource type="PackedScene" uid="uid://5mdusql7ppnr" path="res://gridmap/tiles/Mountain.tscn" id="5_jnlp7"]
 
 [node name="Root" type="Node3D"]
 
 [node name="GridScene" parent="." instance=ExtResource("1_pq8q7")]
+visible = false
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.78858, 0.614932, 0, -0.614932, 0.78858, 0, 13.5342, 11.7191)
+transform = Transform3D(0.866025, 0.307466, -0.39429, 0, 0.78858, 0.614932, 0.5, -0.532547, 0.68293, -1.72561, 4.67181, 5.51908)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.127878, 0.99179, 0, -0.99179, 0.127878, 0, 11.7522, -0.0945975)
+transform = Transform3D(0.970211, -0.218003, 0.105664, 0, 0.436158, 0.89987, -0.242261, -0.873064, 0.423165, 0, 7.51609, -0.0945975)
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 2.0
+light_angular_distance = 5.0
+light_specular = 1.5
 
 [node name="Root UI" parent="." instance=ExtResource("2_pyidc")]
+
+[node name="Shrine" parent="." instance=ExtResource("3_vvh5c")]
+
+[node name="Forest" parent="." instance=ExtResource("4_28aoi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="Mountain" parent="." instance=ExtResource("5_jnlp7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
