@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ce14q743nf1jg"]
 
 [ext_resource type="Theme" uid="uid://dqqxqjl6xhxrq" path="res://interface/basetheme.tres" id="1_pxxgi"]
-[ext_resource type="Script" uid="uid://bfsgcx6noivo3" path="res://interface/setSeed.gd" id="2_4mce8"]
+[ext_resource type="Script" uid="uid://nf03f1y50pi8" path="res://interface/new_game.gd" id="2_wwv3j"]
 [ext_resource type="Script" uid="uid://bmmchavv15s6q" path="res://interface/ToggleNewGame.gd" id="3_gr4bn"]
 
 [node name="Root UI" type="Control"]
@@ -15,7 +15,6 @@ grow_vertical = 2
 theme = ExtResource("1_pxxgi")
 
 [node name="NewGame" type="PanelContainer" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -28,6 +27,7 @@ offset_right = 196.0
 offset_bottom = 71.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("2_wwv3j")
 
 [node name="Panel" type="Panel" parent="NewGame"]
 layout_mode = 2
@@ -50,14 +50,21 @@ theme_override_font_sizes/font_size = 36
 text = "神 kami"
 horizontal_alignment = 1
 
-[node name="LineEdit" type="LineEdit" parent="NewGame/MarginContainer/VBoxContainer"]
+[node name="Seed" type="LineEdit" parent="NewGame/MarginContainer/VBoxContainer"]
 layout_mode = 2
 placeholder_text = "種 Seed"
-script = ExtResource("2_4mce8")
 
-[node name="Button" type="Button" parent="NewGame/MarginContainer/VBoxContainer"]
+[node name="Randomize" type="Button" parent="NewGame/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "もう一度 Randomize"
+
+[node name="Newgame" type="Button" parent="NewGame/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "始める New game"
+
+[node name="Exit" type="Button" parent="NewGame/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "出口 Exit"
 
 [node name="MenuManager" type="PanelContainer" parent="."]
 layout_mode = 1
