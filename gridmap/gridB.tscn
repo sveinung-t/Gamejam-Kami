@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cx8yk86oigf8v"]
+
+[ext_resource type="MeshLibrary" uid="uid://bekhshqsfibvj" path="res://gridmap/tilesets/naturekit.tres" id="1_h3e18"]
+
+[node name="GridB" type="GridMap"]
+mesh_library = ExtResource("1_h3e18")
+cell_size = Vector3(1, 1, 1)
