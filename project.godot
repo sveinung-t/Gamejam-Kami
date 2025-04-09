@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Gamejam-Kami"
+run/main_scene="uid://b447cbmqysnrm"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
