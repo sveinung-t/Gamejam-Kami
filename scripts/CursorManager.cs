@@ -7,8 +7,8 @@ public partial class CursorManager : Node
 
 	public override void _Ready()
 	{
-		_defaultCursor = ResourceLoader.Load<Texture2D>("res://Sprites/Cursor Pack/Double/hand_point.png");
-		_grabCursor = ResourceLoader.Load<Texture2D>("res://Sprites/Cursor Pack/Double/hand_closed.png");
+		_defaultCursor = ResourceLoader.Load<Texture2D>("res://Sprites/Cursor Pack/Default/hand_point.png");
+		_grabCursor = ResourceLoader.Load<Texture2D>("res://Sprites/Cursor Pack/Default/hand_closed.png");
 
 		Input.SetCustomMouseCursor(_defaultCursor);
 	}
