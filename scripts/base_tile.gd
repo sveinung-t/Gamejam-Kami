@@ -14,6 +14,7 @@ func _on_tile_body_mouse_exited() -> void:
 
 func _on_tile_body_input_event(_camera: Node, event: InputEvent, _event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		print(can_be)
 		SignalBus.emit_signal("tile_select", self, can_be)
 
 func onSelect(node: Node3D, _can_be: Array[PackedScene]) -> void:
