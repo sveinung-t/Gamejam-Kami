@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cuj8af2wnhhqb"]
 
 [ext_resource type="PackedScene" uid="uid://bt03qb3oi11qv" path="res://models/NatureKit/cliff_blockHalf_rock.glb" id="1_jnp2x"]
-[ext_resource type="Script" uid="uid://drarqfxdrbegu" path="res://tiles/base_tile.gd" id="1_lqty5"]
+[ext_resource type="Script" uid="uid://drarqfxdrbegu" path="res://scripts/base_tile.gd" id="1_lqty5"]
 [ext_resource type="PackedScene" uid="uid://w12ae666qtu" path="res://models/FantasyTown/pillarWood.glb" id="3_lqty5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yaoil"]

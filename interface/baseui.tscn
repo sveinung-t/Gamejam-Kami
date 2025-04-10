@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://ce14q743nf1jg"]
 
 [ext_resource type="Theme" uid="uid://dqqxqjl6xhxrq" path="res://interface/basetheme.tres" id="1_pxxgi"]
-[ext_resource type="Script" uid="uid://nf03f1y50pi8" path="res://interface/MainMenu.gd" id="2_gr4bn"]
-[ext_resource type="Script" uid="uid://bmmchavv15s6q" path="res://interface/ToggleMainMenu.gd" id="3_gr4bn"]
+[ext_resource type="Script" uid="uid://nf03f1y50pi8" path="res://scripts/MainMenu.gd" id="2_gr4bn"]
+[ext_resource type="Script" uid="uid://bmmchavv15s6q" path="res://scripts/ToggleMainMenu.gd" id="3_gr4bn"]
 
 [node name="Root UI" type="Control"]
 texture_filter = 1
