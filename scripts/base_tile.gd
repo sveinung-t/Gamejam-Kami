@@ -1,6 +1,6 @@
 extends Node3D
 
-@export var can_be: Array[PackedScene] = []
+@export var can_be: Dictionary[String, PackedScene] = {}
 
 func _ready() -> void:
 	SignalBus.connect("tile_select", onSelect)
@@ -17,7 +17,7 @@ func _on_tile_body_input_event(_camera: Node, event: InputEvent, _event_position
 		print(can_be)
 		SignalBus.emit_signal("tile_select", self, can_be)
 
-func onSelect(node: Node3D, _can_be: Array[PackedScene]) -> void:
+func onSelect(node: Node3D, _can_be: Dictionary[String, PackedScene]) -> void:
 	if node == self:
 		$Selected.visible = !$Selected.visible
 	else:

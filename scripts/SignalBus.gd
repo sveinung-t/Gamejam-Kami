@@ -1,7 +1,7 @@
 extends Node
 
 @warning_ignore("unused_signal")
-signal tile_select(node: Node3D, can_be: Array[PackedScene])
+signal tile_select(node: Node3D, can_be: Dictionary[String, PackedScene])
 @warning_ignore("unused_signal")
 signal tile_deselect()
 @warning_ignore("unused_signal")

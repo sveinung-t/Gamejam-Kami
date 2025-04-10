@@ -3,7 +3,7 @@ extends Node
 func _ready() -> void:
 	SignalBus.connect("tile_select", _on_tile_select)
 
-func _on_tile_select(_node: Node3D, can_be: Array[PackedScene]):
+func _on_tile_select(_node: Node3D, can_be: Dictionary[String, PackedScene]):
 	var actionbar = get_node(".")
 	var hotbar = get_node("Margins/Hotbar")
 	
@@ -13,11 +13,11 @@ func _on_tile_select(_node: Node3D, can_be: Array[PackedScene]):
 		hotbar.remove_child(x)
 	)
 	
-	can_be.all(func (k: PackedScene):
-		print(k)
+	can_be.keys().all(func (k: String):
 		var newBtn = Button.new()
 		
-		newBtn.text = k.resource_path.get_file().trim_suffix('.tscn')
+		var scene: PackedScene = can_be[k]
+		newBtn.text = k
 		hotbar.add_child(newBtn)
 	)
 	
