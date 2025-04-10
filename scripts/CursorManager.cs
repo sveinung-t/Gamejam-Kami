@@ -1,16 +1,35 @@
 using Godot;
+using System.Collections.Generic;
 
 public partial class CursorManager : Node
 {
-	Texture2D _defaultCursor;
-	Texture2D _grabCursor;
+	public enum CursorType
+	{
+		Default,
+		Grab,
+		Select
+	}
+
+	private Dictionary<CursorType, Texture2D> _cursors = new Dictionary<CursorType, Texture2D>();
 
 	public override void _Ready()
 	{
-		_defaultCursor = ResourceLoader.Load<Texture2D>("res://Sprites/Cursor Pack/hand_point.png");
-		_grabCursor = ResourceLoader.Load<Texture2D>("res://Sprites/Cursor Pack/hand_closed.png");
+		_cursors[CursorType.Default] = LoadCursor("hand_open.png");
+		_cursors[CursorType.Grab] = LoadCursor("hand_closed.png");
+        _cursors[CursorType.Select] = LoadCursor("hand_point.png");
 
-		Input.SetCustomMouseCursor(_defaultCursor);
+        SetCursor(CursorType.Default);
+	}
+
+	private Texture2D LoadCursor(string name)
+	{
+		return ResourceLoader.Load<Texture2D>($"res://Sprites/Cursor Pack/{name}");
+	}
+
+	public void SetCursor(CursorType type)
+	{
+		if (_cursors.TryGetValue(type, out var texture))
+		{   Input.SetCustomMouseCursor(texture); }
 	}
 
 	public override void _Input(InputEvent @event)
@@ -18,9 +37,9 @@ public partial class CursorManager : Node
 		if (@event is InputEventMouseButton e)
 		{
 			if (e.Pressed)
-			{   Input.SetCustomMouseCursor(_grabCursor); }
+			{   SetCursor(CursorType.Grab); }
 			else
-			{   Input.SetCustomMouseCursor(_defaultCursor); }
+			{   SetCursor(CursorType.Default); }
 		}
 	}
 }
