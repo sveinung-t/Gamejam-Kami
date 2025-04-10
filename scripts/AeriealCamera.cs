@@ -21,13 +21,9 @@ public partial class AeriealCamera : Node3D
 	
 	private void _GetMoveVectors()
 	{
-		_rightVec = _cam.GlobalTransform.Basis.X;
-		_rightVec.Y = 0;
-		_rightVec = _rightVec.Normalized();
-
-		_forwardVec = _cam.GlobalTransform.Basis.Z;
-		_forwardVec.Y = 0;
-		_forwardVec = _forwardVec.Normalized();
+		Vector3 offset = _cam.GlobalPosition - GlobalPosition;
+		_forwardVec = new Vector3(offset.X, 0, offset.Z).Normalized();
+		_rightVec = new Vector3(_forwardVec.Z, 0, -_forwardVec.X).Normalized();
 	}
 
 	public override void _Input(InputEvent @event)
@@ -52,7 +48,7 @@ public partial class AeriealCamera : Node3D
 			}
 			else
 			{
-				_cam.RotateY(-m.Relative.X * 0.5f * DragSpeed);
+				RotateY(-m.Relative.X * 0.5f * DragSpeed);
 				_GetMoveVectors();
 			}
 		}
