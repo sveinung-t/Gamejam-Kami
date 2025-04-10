@@ -10,6 +10,23 @@ public partial class CursorManager : Node
 		Select
 	}
 
+    public void SetCursorFromString(string type)
+    {
+        switch (type.ToLower())
+        {
+            case "default":
+                default:
+                SetCursor(CursorType.Default);
+                break;
+            case "grab":
+                SetCursor(CursorType.Grab);
+                break;
+            case "select":
+                SetCursor(CursorType.Select);
+                break;
+        }
+    }
+
 	private Dictionary<CursorType, Texture2D> _cursors = new Dictionary<CursorType, Texture2D>();
 
 	public override void _Ready()
@@ -30,16 +47,5 @@ public partial class CursorManager : Node
 	{
 		if (_cursors.TryGetValue(type, out var texture))
 		{   Input.SetCustomMouseCursor(texture); }
-	}
-
-	public override void _Input(InputEvent @event)
-	{
-		if (@event is InputEventMouseButton e)
-		{
-			if (e.Pressed)
-			{   SetCursor(CursorType.Grab); }
-			else
-			{   SetCursor(CursorType.Default); }
-		}
 	}
 }
