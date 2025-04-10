@@ -30,16 +30,26 @@ public partial class AeriealCamera : Node3D
 	{
 		if (@event is InputEventMouseButton e)
 		{	
-			if (e.Pressed) 
-			{	
-				_dragging = true;
-				_draggingLeft = e.ButtonIndex == MouseButton.Left;
+			if (e.ButtonIndex == MouseButton.WheelUp || e.ButtonIndex == MouseButton.WheelDown)
+			{ //Zoom
+				if (_dragging) { return; }
+				float newZoomSize = _cam.Size + 0.3f *
+				(e.ButtonIndex == MouseButton.WheelUp ? -1f : 1f);
+				_cam.Size = Mathf.Clamp(newZoomSize, 3f, 15f);
 			}
 			else
-			{	_dragging = false; }
+			{ //Pan
+				if (e.Pressed) 
+				{	
+					_dragging = true;
+					_draggingLeft = e.ButtonIndex == MouseButton.Left;
+				}
+				else
+				{	_dragging = false; }
+			}
 		}
 		else if (@event is InputEventMouseMotion m && _dragging) 
-		{
+		{ //Rotate
 			if  (_draggingLeft)
 			{
 				GlobalPosition +=
