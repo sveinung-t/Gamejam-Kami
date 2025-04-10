@@ -1,0 +1,72 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdmhdmtiha2vs"]
+
+[ext_resource type="Script" uid="uid://nf03f1y50pi8" path="res://scripts/MainMenu.gd" id="1_g8ogf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g8ogf"]
+bg_color = Color(0, 0, 0, 0.247059)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_g8ogf")
+
+[node name="Overlay" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_g8ogf")
+
+[node name="MainMenu" type="PanelContainer" parent="."]
+layout_mode = 2
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -196.0
+offset_top = -123.0
+offset_right = 196.0
+offset_bottom = 123.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="MainMenu"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MainMenu"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/MarginContainer"]
+custom_minimum_size = Vector2(368, 0)
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Label" type="Label" parent="MainMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "神 kami"
+horizontal_alignment = 1
+
+[node name="Seed" type="LineEdit" parent="MainMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+placeholder_text = "種 Seed"
+
+[node name="Randomize" type="Button" parent="MainMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "もう一度 Randomize"
+
+[node name="Newgame" type="Button" parent="MainMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "始める New game"
+
+[node name="Exit" type="Button" parent="MainMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "出口 Exit"
+
+[connection signal="gui_input" from="Overlay" to="MainMenu" method="_on_overlay_gui_input"]

@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://ce14q743nf1jg"]
 
 [ext_resource type="Theme" uid="uid://dqqxqjl6xhxrq" path="res://interface/basetheme.tres" id="1_pxxgi"]
-[ext_resource type="Script" uid="uid://nf03f1y50pi8" path="res://scripts/MainMenu.gd" id="2_gr4bn"]
-[ext_resource type="Script" uid="uid://bmmchavv15s6q" path="res://scripts/ToggleMainMenu.gd" id="3_gr4bn"]
+[ext_resource type="PackedScene" uid="uid://bdmhdmtiha2vs" path="res://interface/main_menu.tscn" id="2_gr4bn"]
+[ext_resource type="PackedScene" uid="uid://coww7mupxpb0l" path="res://interface/menu_manager.tscn" id="3_wwv3j"]
 
 [node name="Root UI" type="Control"]
 texture_filter = 1
@@ -15,84 +15,15 @@ grow_vertical = 2
 mouse_filter = 1
 theme = ExtResource("1_pxxgi")
 
-[node name="MainMenu" type="PanelContainer" parent="."]
-visible = false
+[node name="MainMenu" parent="." instance=ExtResource("2_gr4bn")]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -196.0
-offset_top = -71.0
-offset_right = 196.0
-offset_bottom = 71.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("2_gr4bn")
+script = null
 
-[node name="Panel" type="Panel" parent="MainMenu"]
-layout_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="MainMenu"]
-layout_mode = 2
-theme_override_constants/margin_left = 12
-theme_override_constants/margin_top = 12
-theme_override_constants/margin_right = 12
-theme_override_constants/margin_bottom = 12
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/MarginContainer"]
-custom_minimum_size = Vector2(368, 0)
-layout_mode = 2
-theme_override_constants/separation = 12
-
-[node name="Label" type="Label" parent="MainMenu/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 36
-text = "神 kami"
-horizontal_alignment = 1
-
-[node name="Seed" type="LineEdit" parent="MainMenu/MarginContainer/VBoxContainer"]
-layout_mode = 2
-placeholder_text = "種 Seed"
-
-[node name="Randomize" type="Button" parent="MainMenu/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "もう一度 Randomize"
-
-[node name="Newgame" type="Button" parent="MainMenu/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "始める New game"
-
-[node name="Exit" type="Button" parent="MainMenu/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "出口 Exit"
-
-[node name="MenuManager" type="PanelContainer" parent="."]
+[node name="MenuManager" parent="." instance=ExtResource("3_wwv3j")]
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -188.0
-offset_top = -4.0
-offset_right = -128.0
-offset_bottom = 66.0
-grow_horizontal = 0
-
-[node name="Panel" type="Panel" parent="MenuManager"]
-layout_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="MenuManager"]
-layout_mode = 2
-theme_override_constants/margin_left = -2
-theme_override_constants/margin_top = 8
-theme_override_constants/margin_right = -2
-theme_override_constants/margin_bottom = -2
-
-[node name="Button" type="Button" parent="MenuManager/MarginContainer"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-text = "献立 Menu"
-icon_alignment = 1
-expand_icon = true
-script = ExtResource("3_gr4bn")
+offset_left = -239.0

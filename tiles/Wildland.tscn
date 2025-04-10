@@ -11,20 +11,20 @@
 
 [node name="BaseTile" parent="." instance=ExtResource("1_okhe4")]
 
-[node name="grass_large2" parent="." instance=ExtResource("2_rn00i")]
+[node name="grass_large2" parent="BaseTile" instance=ExtResource("2_rn00i")]
 transform = Transform3D(3.31306, 0, 0, 0, 1.99627, 0, 0, 0, 2.24081, -0.086063, 0.0852419, 0.496645)
 
-[node name="flower_yellowA2" parent="." instance=ExtResource("3_k5nfr")]
+[node name="flower_yellowA2" parent="BaseTile" instance=ExtResource("3_k5nfr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.482398, 0.0185365, -0.0461887)
 
-[node name="grass_large3" parent="." instance=ExtResource("2_rn00i")]
+[node name="grass_large3" parent="BaseTile" instance=ExtResource("2_rn00i")]
 transform = Transform3D(3.02183, 0, 0, 0, 2.47691, 0, 0, 0, 3.32357, 0.076247, -0.0243449, -0.227683)
 
-[node name="grass2" parent="." instance=ExtResource("4_3jcyf")]
+[node name="grass2" parent="BaseTile" instance=ExtResource("4_3jcyf")]
 transform = Transform3D(5.006, 0, 0, 0, 2.63629, 0, 0, 0, 5.006, 0.0585501, 0.101032, 0.175909)
 
-[node name="flower_purpleA2" parent="." instance=ExtResource("5_k5nfr")]
+[node name="flower_purpleA2" parent="BaseTile" instance=ExtResource("5_k5nfr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0793945, 0, -0.557936)
 
-[node name="flower_redA2" parent="." instance=ExtResource("6_3jcyf")]
+[node name="flower_redA2" parent="BaseTile" instance=ExtResource("6_3jcyf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.649157, 0, 0.094503)

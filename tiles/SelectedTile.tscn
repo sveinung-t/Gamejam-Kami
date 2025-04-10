@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfxd3y8s4r5ef"]
+
+[ext_resource type="PackedScene" uid="uid://w12ae666qtu" path="res://models/FantasyTown/pillarWood.glb" id="1_w30fc"]
+
+[node name="Selected" type="Node3D"]
+visible = false
+
+[node name="pillarWood2" parent="." instance=ExtResource("1_w30fc")]
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 0.9, 0, 0.9)
+
+[node name="pillarWood3" parent="." instance=ExtResource("1_w30fc")]
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, -0.9, 0, 0.9)
+
+[node name="pillarWood4" parent="." instance=ExtResource("1_w30fc")]
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 0.9, 0, -0.9)
+
+[node name="pillarWood5" parent="." instance=ExtResource("1_w30fc")]
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, -0.9, 0, -0.9)

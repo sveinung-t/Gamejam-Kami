@@ -1,37 +1,30 @@
-[gd_scene load_steps=5 format=3 uid="uid://cuj8af2wnhhqb"]
+[gd_scene load_steps=6 format=3 uid="uid://cuj8af2wnhhqb"]
 
 [ext_resource type="PackedScene" uid="uid://bt03qb3oi11qv" path="res://models/NatureKit/cliff_blockHalf_rock.glb" id="1_jnp2x"]
 [ext_resource type="Script" uid="uid://drarqfxdrbegu" path="res://scripts/base_tile.gd" id="1_lqty5"]
-[ext_resource type="PackedScene" uid="uid://w12ae666qtu" path="res://models/FantasyTown/pillarWood.glb" id="3_lqty5"]
+[ext_resource type="PackedScene" uid="uid://d301nvw88xscc" path="res://models/NatureKit/ground_grass.glb" id="2_lqty5"]
+[ext_resource type="PackedScene" uid="uid://dfxd3y8s4r5ef" path="res://tiles/SelectedTile.tscn" id="3_lqty5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yaoil"]
 
 [node name="BaseTile" type="Node3D"]
 script = ExtResource("1_lqty5")
 
+[node name="ground_grass2" parent="." instance=ExtResource("2_lqty5")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+visible = false
+
 [node name="cliff_blockHalf_rock2" parent="." instance=ExtResource("1_jnp2x")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -0.9, 0)
 
-[node name="Selected" type="Node3D" parent="."]
-visible = false
+[node name="Selected" parent="." instance=ExtResource("3_lqty5")]
 
-[node name="pillarWood2" parent="Selected" instance=ExtResource("3_lqty5")]
-transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 0.9, 0, 0.9)
+[node name="TileBody" type="StaticBody3D" parent="."]
 
-[node name="pillarWood3" parent="Selected" instance=ExtResource("3_lqty5")]
-transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, -0.9, 0, 0.9)
-
-[node name="pillarWood4" parent="Selected" instance=ExtResource("3_lqty5")]
-transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 0.9, 0, -0.9)
-
-[node name="pillarWood5" parent="Selected" instance=ExtResource("3_lqty5")]
-transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, -0.9, 0, -0.9)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TileBody"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 shape = SubResource("BoxShape3D_yaoil")
 
-[connection signal="mouse_entered" from="StaticBody3D" to="." method="_on_static_body_3d_mouse_entered"]
-[connection signal="mouse_exited" from="StaticBody3D" to="." method="_on_static_body_3d_mouse_exited"]
+[connection signal="input_event" from="TileBody" to="." method="_on_tile_body_input_event"]
+[connection signal="mouse_entered" from="TileBody" to="." method="_on_tile_body_mouse_entered"]
+[connection signal="mouse_exited" from="TileBody" to="." method="_on_tile_body_mouse_exited"]

@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://b447cbmqysnrm"]
+[gd_scene load_steps=5 format=3 uid="uid://b447cbmqysnrm"]
 
 [ext_resource type="Script" uid="uid://dwvbvc54dmp72" path="res://scripts/CursorManager.cs" id="1_jnlp7"]
-[ext_resource type="PackedScene" uid="uid://da347hanmw0n2" path="res://grid_scene.tscn" id="1_pq8q7"]
 [ext_resource type="Script" uid="uid://do38o0mw56huu" path="res://scripts/AeriealCamera.cs" id="2_28aoi"]
 [ext_resource type="PackedScene" uid="uid://ce14q743nf1jg" path="res://interface/baseui.tscn" id="2_pyidc"]
 [ext_resource type="PackedScene" uid="uid://iyckkbv564i5" path="res://maps/mapA.tscn" id="3_vvh5c"]
@@ -10,9 +9,6 @@
 
 [node name="CursorManager" type="Node" parent="."]
 script = ExtResource("1_jnlp7")
-
-[node name="GridScene" parent="." instance=ExtResource("1_pq8q7")]
-visible = false
 
 [node name="CameraAnchor" type="Node3D" parent="."]
 script = ExtResource("2_28aoi")

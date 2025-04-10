@@ -13,7 +13,12 @@ config_version=5
 config/name="Gamejam-Kami"
 run/main_scene="uid://b447cbmqysnrm"
 config/features=PackedStringArray("4.4", "C#", "Mobile")
+boot_splash/bg_color=Color(0, 0, 0, 1)
 config/icon="res://icon.svg"
+
+[autoload]
+
+SignalBus="*res://scripts/SignalBus.gd"
 
 [dotnet]
 
@@ -22,3 +27,4 @@ project/assembly_name="Gamejam-Kami"
 [rendering]
 
 renderer/rendering_method="mobile"
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)

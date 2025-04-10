@@ -1,9 +1,10 @@
-extends PanelContainer
+extends Control
 
-@onready var seedEntry = $MarginContainer/VBoxContainer/Seed
-@onready var randomizeBtn = $MarginContainer/VBoxContainer/Randomize
-@onready var newgameBtn = $MarginContainer/VBoxContainer/Newgame
-@onready var exitBtn = $MarginContainer/VBoxContainer/Exit
+@onready var mainMenuRoot = $"."
+@onready var seedEntry = $MainMenu/MarginContainer/VBoxContainer/Seed
+@onready var randomizeBtn = $MainMenu/MarginContainer/VBoxContainer/Randomize
+@onready var newgameBtn = $MainMenu/MarginContainer/VBoxContainer/Newgame
+@onready var exitBtn = $MainMenu/MarginContainer/VBoxContainer/Exit
 var rng = RandomNumberGenerator.new()
 
 func _ready() -> void:
@@ -24,3 +25,6 @@ func newGame() -> void:
 
 func exitGame() -> void:
 	get_tree().quit()
+
+func _on_overlay_gui_input(event: InputEvent) -> void:
+	mainMenuRoot.visible = false
