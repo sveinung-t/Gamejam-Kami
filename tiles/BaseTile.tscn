@@ -1,8 +1,32 @@
-[gd_scene load_steps=2 format=3 uid="uid://cuj8af2wnhhqb"]
+[gd_scene load_steps=5 format=3 uid="uid://cuj8af2wnhhqb"]
 
 [ext_resource type="PackedScene" uid="uid://bt03qb3oi11qv" path="res://models/NatureKit/cliff_blockHalf_rock.glb" id="1_jnp2x"]
+[ext_resource type="Script" uid="uid://drarqfxdrbegu" path="res://tiles/base_tile.gd" id="1_lqty5"]
+[ext_resource type="PackedScene" uid="uid://4tveop2q5mn7" path="res://models/FantasyTown/poles.glb" id="2_yaoil"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yaoil"]
 
 [node name="BaseTile" type="Node3D"]
+script = ExtResource("1_lqty5")
 
 [node name="cliff_blockHalf_rock2" parent="." instance=ExtResource("1_jnp2x")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -0.9, 0)
+
+[node name="Selected" type="Node3D" parent="."]
+visible = false
+
+[node name="poles2" parent="Selected" instance=ExtResource("2_yaoil")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="poles3" parent="Selected" instance=ExtResource("2_yaoil")]
+transform = Transform3D(-2, 0, -1.74846e-07, 0, 2, 0, 1.74846e-07, 0, -2, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("BoxShape3D_yaoil")
+
+[connection signal="input_event" from="StaticBody3D" to="." method="_on_static_body_3d_input_event"]
+[connection signal="mouse_entered" from="StaticBody3D" to="." method="_on_static_body_3d_mouse_entered"]
+[connection signal="mouse_exited" from="StaticBody3D" to="." method="_on_static_body_3d_mouse_exited"]

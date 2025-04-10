@@ -2,8 +2,12 @@ extends Node3D
 
 const RAY_LENGTH = 1000
 var prevMouse: Vector2
+var hoveredObj: CollisionObject3D
 
 func _process(delta: float) -> void:
+	getPosition()
+
+func getPosition() -> void:
 	var space = get_world_3d().direct_space_state
 	var cam = get_viewport().get_camera_3d()
 	var mouse: Vector2 = get_viewport().get_mouse_position()
@@ -15,10 +19,17 @@ func _process(delta: float) -> void:
 	var query = PhysicsRayQueryParameters3D.create(origin, end)
 	query.collide_with_areas = true
 	
-	var intersect = space.intersect_ray(query).position
-	var grid_pos = Vector3(roundDown(intersect.x),0, roundDown(intersect.z))
+	var intersect = space.intersect_ray(query)
+	var position = intersect.position
+	var grid_pos = Vector3(roundDown(position.x),0, roundDown(position.z))
 	
-	print(grid_pos)
+	if (intersect.is_empty()):
+		hoveredObj = null
+		print("Lost object")
+		
+	if(intersect.collider != hoveredObj):
+		hoveredObj = intersect.collider
+		print(hoveredObj)
 
 func roundDown(n: float) -> float:
 	var rounded = round(n)
