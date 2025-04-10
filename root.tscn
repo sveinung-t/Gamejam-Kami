@@ -1,15 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://b447cbmqysnrm"]
+[gd_scene load_steps=6 format=3 uid="uid://b447cbmqysnrm"]
 
+[ext_resource type="Script" uid="uid://dwvbvc54dmp72" path="res://scripts/CursorManager.cs" id="1_jnlp7"]
 [ext_resource type="PackedScene" uid="uid://da347hanmw0n2" path="res://grid_scene.tscn" id="1_pq8q7"]
+[ext_resource type="Script" uid="uid://do38o0mw56huu" path="res://scripts/AeriealCamera.cs" id="2_28aoi"]
 [ext_resource type="PackedScene" uid="uid://ce14q743nf1jg" path="res://interface/baseui.tscn" id="2_pyidc"]
 [ext_resource type="PackedScene" uid="uid://iyckkbv564i5" path="res://maps/mapA.tscn" id="3_vvh5c"]
 
 [node name="Root" type="Node3D"]
 
+[node name="CursorManager" type="Node" parent="."]
+script = ExtResource("1_jnlp7")
+
 [node name="GridScene" parent="." instance=ExtResource("1_pq8q7")]
 visible = false
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="CameraAnchor" type="Node3D" parent="."]
+script = ExtResource("2_28aoi")
+
+[node name="Camera3D" type="Camera3D" parent="CameraAnchor"]
 transform = Transform3D(0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, 2.5, 4, 2.5)
 projection = 1
 size = 10.0
