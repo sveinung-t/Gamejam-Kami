@@ -39,4 +39,3 @@ func _on_toggle_menu() -> void:
 func _on_overlay_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.is_pressed():
 		SignalBus.emit_signal("close_main_menu")
-		print(event)

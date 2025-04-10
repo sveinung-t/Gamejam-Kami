@@ -24,7 +24,11 @@ SignalBus="*res://scripts/SignalBus.gd"
 
 project/assembly_name="Gamejam-Kami"
 
+[gui]
+
+theme/custom="uid://dqqxqjl6xhxrq"
+
 [rendering]
 
 renderer/rendering_method="mobile"
-environment/defaults/default_clear_color=Color(0, 0, 0, 1)
+environment/defaults/default_clear_color=Color(0.299547, 0.299547, 0.299547, 1)

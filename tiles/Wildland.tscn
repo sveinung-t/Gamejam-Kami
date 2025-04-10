@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://c3hjtaqyniouo"]
+[gd_scene load_steps=8 format=3 uid="uid://c3hjtaqyniouo"]
 
 [ext_resource type="PackedScene" uid="uid://cuj8af2wnhhqb" path="res://tiles/BaseTile.tscn" id="1_okhe4"]
 [ext_resource type="PackedScene" uid="uid://dwk1u5ddpnt12" path="res://models/NatureKit/grass_large.glb" id="2_rn00i"]
+[ext_resource type="PackedScene" uid="uid://cya6phn0ltjfn" path="res://tiles/Shrine.tscn" id="2_w4hqv"]
 [ext_resource type="PackedScene" uid="uid://bqyo8sox2evxg" path="res://models/NatureKit/flower_yellowA.glb" id="3_k5nfr"]
 [ext_resource type="PackedScene" uid="uid://djrflv5uphikv" path="res://models/NatureKit/grass.glb" id="4_3jcyf"]
 [ext_resource type="PackedScene" uid="uid://c327jqrscdpl6" path="res://models/NatureKit/flower_purpleA.glb" id="5_k5nfr"]
@@ -10,6 +11,7 @@
 [node name="Wildland" type="Node3D"]
 
 [node name="BaseTile" parent="." instance=ExtResource("1_okhe4")]
+can_be = Array[PackedScene]([ExtResource("2_w4hqv")])
 
 [node name="grass_large2" parent="BaseTile" instance=ExtResource("2_rn00i")]
 transform = Transform3D(3.31306, 0, 0, 0, 1.99627, 0, 0, 0, 2.24081, -0.086063, 0.0852419, 0.496645)

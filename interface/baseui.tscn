@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ce14q743nf1jg"]
 
-[ext_resource type="Theme" uid="uid://dqqxqjl6xhxrq" path="res://interface/basetheme.tres" id="1_pxxgi"]
 [ext_resource type="PackedScene" uid="uid://bdmhdmtiha2vs" path="res://interface/main_menu.tscn" id="2_gr4bn"]
+[ext_resource type="PackedScene" uid="uid://cemoquhlh7pfm" path="res://interface/action_bar.tscn" id="3_gr4bn"]
 [ext_resource type="PackedScene" uid="uid://coww7mupxpb0l" path="res://interface/menu_manager.tscn" id="3_wwv3j"]
 
 [node name="Root UI" type="Control"]
@@ -13,18 +13,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-theme = ExtResource("1_pxxgi")
 
 [node name="MainMenu" parent="." instance=ExtResource("2_gr4bn")]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = 0.0
-offset_bottom = 0.0
-grow_horizontal = 2
-grow_vertical = 2
 
 [node name="MenuManager" parent="." instance=ExtResource("3_wwv3j")]
 layout_mode = 1
 offset_left = -239.0
+
+[node name="ActionBarMenu" parent="." instance=ExtResource("3_gr4bn")]
+layout_mode = 1
