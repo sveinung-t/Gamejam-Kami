@@ -15,12 +15,13 @@ projection = 1
 size = 10.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.970211, -0.218003, 0.105664, 0, 0.436158, 0.89987, -0.242261, -0.873064, 0.423165, 0, 7.51609, -0.0945975)
+transform = Transform3D(0.866025, 0.353553, -0.353553, 0, 0.707107, 0.707107, 0.5, -0.612372, 0.612372, 0, 0, 0)
 light_indirect_energy = 2.0
 light_volumetric_fog_energy = 2.0
 light_angular_distance = 5.0
 light_specular = 1.5
-
-[node name="Root UI" parent="." instance=ExtResource("2_pyidc")]
+directional_shadow_mode = 0
 
 [node name="MapA" parent="." instance=ExtResource("3_vvh5c")]
+
+[node name="Root UI" parent="." instance=ExtResource("2_pyidc")]

@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://iyckkbv564i5"]
+[gd_scene load_steps=6 format=3 uid="uid://iyckkbv564i5"]
 
 [ext_resource type="PackedScene" uid="uid://cya6phn0ltjfn" path="res://gridmap/tiles/Shrine.tscn" id="1_d7gsa"]
 [ext_resource type="PackedScene" uid="uid://5mdusql7ppnr" path="res://gridmap/tiles/Mountain.tscn" id="2_8hghv"]
 [ext_resource type="PackedScene" uid="uid://ceovhlbkoy3gr" path="res://gridmap/tiles/Forest.tscn" id="3_huq3y"]
+[ext_resource type="PackedScene" uid="uid://c3hjtaqyniouo" path="res://gridmap/tiles/Wildland.tscn" id="4_huq3y"]
+[ext_resource type="PackedScene" uid="uid://cuj8af2wnhhqb" path="res://gridmap/tiles/BaseTile.tscn" id="5_44rp2"]
 
 [node name="MapA" type="Node3D"]
 
@@ -22,3 +24,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
 
 [node name="Forest2" parent="." instance=ExtResource("3_huq3y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+
+[node name="Wildland" parent="." instance=ExtResource("4_huq3y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 2)
+
+[node name="Wildland2" parent="." instance=ExtResource("4_huq3y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+
+[node name="BaseTile" parent="." instance=ExtResource("5_44rp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
