@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://5mdusql7ppnr"]
+[gd_scene load_steps=13 format=3 uid="uid://5mdusql7ppnr"]
 
 [ext_resource type="PackedScene" uid="uid://cuj8af2wnhhqb" path="res://tiles/BaseTile.tscn" id="1_cm4il"]
+[ext_resource type="Animation" uid="uid://c451l2ktxa1pr" path="res://Animations/Mountain_De_Spawn.res" id="2_uclab"]
 [ext_resource type="PackedScene" uid="uid://bqk77e8icd21s" path="res://models/NatureKit/stone_tallC.glb" id="2_uiasq"]
 [ext_resource type="PackedScene" uid="uid://dff21a1gpvjwi" path="res://models/NatureKit/stone_tallJ.glb" id="3_u5tbx"]
 [ext_resource type="PackedScene" uid="uid://bmokrumj26not" path="res://models/NatureKit/stone_smallTopB.glb" id="4_6tr7e"]
@@ -10,9 +11,119 @@
 [ext_resource type="PackedScene" uid="uid://c8naeapgiurh5" path="res://models/NatureKit/stone_largeA.glb" id="8_71l7x"]
 [ext_resource type="PackedScene" uid="uid://dbcx6sbxbmqe6" path="res://models/NatureKit/stone_smallC.glb" id="9_q2sj7"]
 
+[sub_resource type="Animation" id="Animation_1j2uf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("stone_tallC2:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.73475, 1.54417, 2.24584)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("stone_tallJ2:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.41395, 1, 1.30885)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("stone_smallTopB2:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.80631, 3.0222, 1.89378)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("stone_smallFlatA2:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("stone_largeD2:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("stone_largeB2:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1.6509, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("stone_largeA2:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.999999, 1, 0.999999)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("stone_smallC2:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hqmxe"]
+_data = {
+&"Mountain_De_Spawn": ExtResource("2_uclab"),
+&"RESET": SubResource("Animation_1j2uf")
+}
+
 [node name="Mountain" type="Node3D"]
 
 [node name="BaseTile" parent="." instance=ExtResource("1_cm4il")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BaseTile"]
+libraries = {
+&"": SubResource("AnimationLibrary_hqmxe")
+}
 
 [node name="stone_tallC2" parent="BaseTile" instance=ExtResource("2_uiasq")]
 transform = Transform3D(1.73475, 0, 0, 0, 1.54417, 0, 0, 0, 2.24584, 0.0857488, -1.19209e-07, 0.105523)

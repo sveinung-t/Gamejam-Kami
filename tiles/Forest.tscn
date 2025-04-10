@@ -1,26 +1,221 @@
-[gd_scene load_steps=6 format=3 uid="uid://ceovhlbkoy3gr"]
+[gd_scene load_steps=9 format=3 uid="uid://ceovhlbkoy3gr"]
 
 [ext_resource type="PackedScene" uid="uid://cuj8af2wnhhqb" path="res://tiles/BaseTile.tscn" id="1_tev1t"]
 [ext_resource type="PackedScene" uid="uid://b0c7m8m2vpa0m" path="res://models/NatureKit/tree_default.glb" id="2_pu1rf"]
 [ext_resource type="PackedScene" uid="uid://cq8vv6tmsrvg0" path="res://models/NatureKit/tree_detailed.glb" id="3_3b8kp"]
 [ext_resource type="PackedScene" uid="uid://d1fqfuibx8r62" path="res://models/NatureKit/tree_fat.glb" id="4_vnkns"]
 [ext_resource type="PackedScene" uid="uid://dt4xhybykh1r1" path="res://models/NatureKit/tree_oak.glb" id="5_4sg2s"]
+[ext_resource type="Animation" uid="uid://cm30mi5gxof2v" path="res://Animations/Forest_De_Spawn.res" id="6_3hfp0"]
+
+[sub_resource type="Animation" id="Animation_3hfp0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("tree_default6:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 0.999999)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("tree_default7:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.753082, 0.718204, 0.864205)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("tree_default8:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.587629, 0.515818, 0.725685)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("tree_default9:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 0.999999, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("tree_default2:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("tree_default3:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.753082, 0.718205, 0.864205)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("tree_default4:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.587629, 0.515818, 0.725684)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("tree_default5:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 0.999999)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("tree_default11:scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.587629, 0.515818, 0.725684)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("tree_default12:scale")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 0.999999, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("tree_default13:scale")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("tree_default15:scale")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.587629, 0.515818, 0.725684)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("tree_detailed2:scale")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("tree_fat2:scale")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("tree_oak2:scale")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uuuwj"]
+_data = {
+&"Forest_De_Spawn": ExtResource("6_3hfp0"),
+&"RESET": SubResource("Animation_3hfp0")
+}
 
 [node name="Forest" type="Node3D"]
 
 [node name="BaseTile" parent="." instance=ExtResource("1_tev1t")]
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BaseTile"]
+libraries = {
+&"": SubResource("AnimationLibrary_uuuwj")
+}
+
 [node name="tree_default6" parent="BaseTile" instance=ExtResource("2_pu1rf")]
-transform = Transform3D(-0.272676, -0.10913, 0.955896, -0.101852, 0.991237, 0.084111, -0.956699, -0.0744246, -0.281402, 0.220387, -0.0961627, 0.68833)
+transform = Transform3D(-0.272676, -0.10913, 0.955896, -0.101852, 0.991237, 0.0841107, -0.956699, -0.074425, -0.281402, 0.220387, -0.0961627, 0.68833)
 
 [node name="tree_default7" parent="BaseTile" instance=ExtResource("2_pu1rf")]
-transform = Transform3D(-0.52683, -0.0783778, 0.610289, -0.0977335, 0.711911, 0.0212761, -0.529179, -0.0534521, -0.61151, 0.305112, -0.140568, -0.0273176)
+transform = Transform3D(-0.52683, -0.0783778, 0.610289, -0.0977335, 0.711911, 0.021276, -0.529179, -0.0534521, -0.61151, 0.305112, -0.140568, -0.0273176)
 
 [node name="tree_default8" parent="BaseTile" instance=ExtResource("2_pu1rf")]
-transform = Transform3D(-0.569118, -0.0562913, 0.242738, -0.072213, 0.511298, -0.0245902, -0.127272, -0.0383895, -0.683441, 0.621528, -0.0416372, 0.826338)
+transform = Transform3D(-0.569118, -0.0562914, 0.162433, -0.072213, 0.511298, -0.0351551, -0.127272, -0.0383895, -0.706398, 0.621528, -0.0416372, 0.826338)
 
 [node name="tree_default9" parent="BaseTile" instance=ExtResource("2_pu1rf")]
-transform = Transform3D(-0.907197, -0.233033, 0.350271, -0.229122, 0.971942, 0.0532053, -0.352842, -0.0319872, -0.935136, 0.847867, -0.16349, 0.191398)
+transform = Transform3D(-0.907197, -0.233033, 0.350271, -0.229122, 0.971942, 0.0532051, -0.352842, -0.0319872, -0.935136, 0.847867, -0.16349, 0.191398)
 
 [node name="tree_default2" parent="BaseTile" instance=ExtResource("2_pu1rf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.362717, 0, -0.414644)
@@ -29,22 +224,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.362717, 0, -0.414644)
 transform = Transform3D(0.659874, 0, 0.416453, 0, 0.718205, 0, -0.362904, 0, 0.757243, 0.303363, 0, -0.136006)
 
 [node name="tree_default4" parent="BaseTile" instance=ExtResource("2_pu1rf")]
-transform = Transform3D(0.284301, 0, 0.590163, 0, 0.515818, 0, -0.514277, 0, 0.422285, -0.609683, 0, -0.065444)
+transform = Transform3D(0.284301, 0, 0.635099, 0, 0.515818, 0, -0.514277, 0, 0.351093, -0.609683, 0, -0.065444)
 
 [node name="tree_default5" parent="BaseTile" instance=ExtResource("2_pu1rf")]
-transform = Transform3D(0.608271, -0.00484914, 0.793714, -0.101852, 0.991237, 0.084111, -0.787167, -0.132003, 0.602447, -0.0515433, -0.0982299, 0.319336)
+transform = Transform3D(0.608271, -0.00484912, 0.793714, -0.101852, 0.991237, 0.0841111, -0.787167, -0.132004, 0.602447, -0.0515433, -0.0982299, 0.319336)
 
 [node name="tree_default11" parent="BaseTile" instance=ExtResource("2_pu1rf")]
-transform = Transform3D(-0.222745, -0.0474525, -0.631847, -0.072213, 0.511298, -0.0245902, 0.53896, 0.0488951, -0.356064, 0.80388, -0.0416372, -0.549968)
+transform = Transform3D(-0.222745, -0.0474525, -0.668202, -0.072213, 0.511298, -0.035155, 0.53896, 0.0488952, -0.280869, 0.80388, -0.0416372, -0.549968)
 
 [node name="tree_default12" parent="BaseTile" instance=ExtResource("2_pu1rf")]
-transform = Transform3D(-0.50282, -0.0713766, -0.861439, -0.229122, 0.971942, 0.0532053, 0.833472, 0.224127, -0.505066, 0.217013, -0.16349, -0.881579)
+transform = Transform3D(-0.50282, -0.0713766, -0.861439, -0.229122, 0.971942, 0.0532052, 0.833472, 0.224127, -0.505066, 0.217013, -0.16349, -0.881579)
 
 [node name="tree_default13" parent="BaseTile" instance=ExtResource("2_pu1rf")]
 transform = Transform3D(0.171052, 0, 0.985262, 0, 1, 0, -0.985262, 0, 0.171052, -0.58717, 0, 0.207498)
 
 [node name="tree_default15" parent="BaseTile" instance=ExtResource("2_pu1rf")]
-transform = Transform3D(-0.458067, 0, 0.51701, 0, 0.515818, 0, -0.36808, 0, -0.509232, -0.28536, 0, 0.510556)
+transform = Transform3D(-0.458067, 0, 0.454555, 0, 0.515818, 0, -0.36808, 0, -0.565683, -0.28536, 0, 0.510556)
 
 [node name="tree_detailed2" parent="BaseTile" instance=ExtResource("3_3b8kp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.54703, 1.19209e-07, 0.819136)
