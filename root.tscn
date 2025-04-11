@@ -24,6 +24,8 @@ light_indirect_energy = 2.0
 light_volumetric_fog_energy = 2.0
 light_angular_distance = 5.0
 light_specular = 1.5
+light_bake_mode = 1
+shadow_enabled = true
 directional_shadow_mode = 0
 
 [node name="MapA" parent="." instance=ExtResource("3_vvh5c")]
