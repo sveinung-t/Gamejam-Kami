@@ -22,8 +22,7 @@ func setNewSeed() -> void:
 func newGame() -> void:
 	var seedText: String = seedEntry.text
 	RngContext.c.seed = seedText.hash()
-	
-	print(RngContext.c.seed)
+	get_tree().reload_current_scene()
 
 func exitGame() -> void:
 	get_tree().quit()
