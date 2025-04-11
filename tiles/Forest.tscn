@@ -199,6 +199,7 @@ _data = {
 [node name="Forest" type="Node3D"]
 
 [node name="BaseTile" parent="." instance=ExtResource("1_tev1t")]
+despawn_animation_name = "Forest_De_Spawn"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="BaseTile"]
 libraries = {
@@ -209,13 +210,13 @@ libraries = {
 transform = Transform3D(-0.272676, -0.10913, 0.955896, -0.101852, 0.991237, 0.0841107, -0.956699, -0.074425, -0.281402, 0.220387, -0.0961627, 0.68833)
 
 [node name="tree_default7" parent="BaseTile" instance=ExtResource("2_pu1rf")]
-transform = Transform3D(-0.52683, -0.0783778, 0.610289, -0.0977335, 0.711911, 0.021276, -0.529179, -0.0534521, -0.61151, 0.305112, -0.140568, -0.0273176)
+transform = Transform3D(-0.52683, -0.0783778, 0.610289, -0.0977335, 0.711911, 0.0212761, -0.529179, -0.0534521, -0.61151, 0.305112, -0.140568, -0.0273176)
 
 [node name="tree_default8" parent="BaseTile" instance=ExtResource("2_pu1rf")]
 transform = Transform3D(-0.569118, -0.0562914, 0.162433, -0.072213, 0.511298, -0.0351551, -0.127272, -0.0383895, -0.706398, 0.621528, -0.0416372, 0.826338)
 
 [node name="tree_default9" parent="BaseTile" instance=ExtResource("2_pu1rf")]
-transform = Transform3D(-0.907197, -0.233033, 0.350271, -0.229122, 0.971942, 0.0532051, -0.352842, -0.0319872, -0.935136, 0.847867, -0.16349, 0.191398)
+transform = Transform3D(-0.907197, -0.233033, 0.350271, -0.229122, 0.971942, 0.0532052, -0.352842, -0.0319872, -0.935136, 0.847867, -0.16349, 0.191398)
 
 [node name="tree_default2" parent="BaseTile" instance=ExtResource("2_pu1rf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.362717, 0, -0.414644)
@@ -227,7 +228,7 @@ transform = Transform3D(0.659874, 0, 0.416453, 0, 0.718205, 0, -0.362904, 0, 0.7
 transform = Transform3D(0.284301, 0, 0.635099, 0, 0.515818, 0, -0.514277, 0, 0.351093, -0.609683, 0, -0.065444)
 
 [node name="tree_default5" parent="BaseTile" instance=ExtResource("2_pu1rf")]
-transform = Transform3D(0.608271, -0.00484912, 0.793714, -0.101852, 0.991237, 0.0841111, -0.787167, -0.132004, 0.602447, -0.0515433, -0.0982299, 0.319336)
+transform = Transform3D(0.608271, -0.00484921, 0.793714, -0.101852, 0.991237, 0.0841112, -0.787167, -0.132004, 0.602447, -0.0515433, -0.0982299, 0.319336)
 
 [node name="tree_default11" parent="BaseTile" instance=ExtResource("2_pu1rf")]
 transform = Transform3D(-0.222745, -0.0474525, -0.668202, -0.072213, 0.511298, -0.035155, 0.53896, 0.0488952, -0.280869, 0.80388, -0.0416372, -0.549968)

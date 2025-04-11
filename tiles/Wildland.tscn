@@ -96,6 +96,7 @@ _data = {
 can_be = Dictionary[String, PackedScene]({
 "Home": ExtResource("2_k54hl")
 })
+despawn_animation_name = "Wildland_De_Spawn"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="BaseTile"]
 libraries = {

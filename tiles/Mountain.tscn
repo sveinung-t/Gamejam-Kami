@@ -119,6 +119,7 @@ _data = {
 [node name="Mountain" type="Node3D"]
 
 [node name="BaseTile" parent="." instance=ExtResource("1_cm4il")]
+despawn_animation_name = "Mountain_De_Spawn"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="BaseTile"]
 libraries = {
