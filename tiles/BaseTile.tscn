@@ -1,14 +1,108 @@
-[gd_scene load_steps=6 format=3 uid="uid://cuj8af2wnhhqb"]
+[gd_scene load_steps=10 format=3 uid="uid://cuj8af2wnhhqb"]
 
 [ext_resource type="PackedScene" uid="uid://bt03qb3oi11qv" path="res://models/NatureKit/cliff_blockHalf_rock.glb" id="1_jnp2x"]
 [ext_resource type="Script" uid="uid://drarqfxdrbegu" path="res://scripts/BaseTile.gd" id="1_lqty5"]
 [ext_resource type="PackedScene" uid="uid://d301nvw88xscc" path="res://models/NatureKit/ground_grass.glb" id="2_lqty5"]
 [ext_resource type="PackedScene" uid="uid://dfxd3y8s4r5ef" path="res://tiles/SelectedTile.tscn" id="3_lqty5"]
 
+[sub_resource type="Animation" id="Animation_hbwhi"]
+resource_name = "BaseTileSelected"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.2, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(0.99, 0.99, 0.99)]
+}
+
+[sub_resource type="Animation" id="Animation_mwcrp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_fmfgp"]
+resource_name = "BaseTileDeselected"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0.2, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.99, 0.99, 0.99), Vector3(1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mwcrp"]
+_data = {
+&"BaseTileDeselected": SubResource("Animation_fmfgp"),
+&"BaseTileSelected": SubResource("Animation_hbwhi"),
+&"RESET": SubResource("Animation_mwcrp")
+}
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_yaoil"]
 
 [node name="BaseTile" type="Node3D"]
 script = ExtResource("1_lqty5")
+animation_player_path = NodePath("AnimationPlayerBaseTile")
+
+[node name="AnimationPlayerBaseTile" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_mwcrp")
+}
 
 [node name="ground_grass2" parent="." instance=ExtResource("2_lqty5")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)

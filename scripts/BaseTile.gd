@@ -7,6 +7,8 @@ extends Node3D
 @export var animation_speed: float = 4
 @onready var anim_player: AnimationPlayer = get_node(animation_player_path)
 
+@onready var hover_anim_player: AnimationPlayer = $AnimationPlayerBaseTile
+
 func _ready() -> void:
 	SignalBus.connect("tile_select", _on_select)
 	SignalBus.connect("tile_deselect", _on_deselect)
@@ -24,11 +26,13 @@ func _ready() -> void:
 		print("Missing or invalid despawn animation for", name)
 
 func _on_tile_body_mouse_entered() -> void:
-	# animate entering hover of a tile
+	if hover_anim_player and hover_anim_player.has_animation("BaseTileSelected"):
+		hover_anim_player.play("BaseTileSelected")
 	pass
 
 func _on_tile_body_mouse_exited() -> void:
-	# animate leaving hover of a tile
+	if hover_anim_player and hover_anim_player.has_animation("BaseTileDeselected"):
+		hover_anim_player.play("BaseTileDeselected")
 	pass
 
 func _on_tile_body_input_event(_camera: Node, event: InputEvent, _event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
