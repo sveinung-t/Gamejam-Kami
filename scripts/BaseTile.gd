@@ -27,11 +27,13 @@ func _ready() -> void:
 
 func _on_tile_body_mouse_entered() -> void:
 	if hover_anim_player and hover_anim_player.has_animation("BaseTileSelected"):
+		hover_anim_player.speed_scale = animation_speed
 		hover_anim_player.play("BaseTileSelected")
 	pass
 
 func _on_tile_body_mouse_exited() -> void:
 	if hover_anim_player and hover_anim_player.has_animation("BaseTileDeselected"):
+		hover_anim_player.speed_scale = animation_speed
 		hover_anim_player.play("BaseTileDeselected")
 	pass
 
