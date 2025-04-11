@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bs6g5fmmjgo0e" path="res://tiles/Farmland.tscn" id="3_bm0sa"]
 [ext_resource type="PackedScene" uid="uid://bqyo8sox2evxg" path="res://models/NatureKit/flower_yellowA.glb" id="3_k5nfr"]
 [ext_resource type="PackedScene" uid="uid://djrflv5uphikv" path="res://models/NatureKit/grass.glb" id="4_3jcyf"]
-[ext_resource type="Script" path="res://scripts/Rescaler.gd" id="5_bm0sa"]
+[ext_resource type="Script" uid="uid://ks2jsgu04g6n" path="res://scripts/Rescaler.gd" id="5_bm0sa"]
 [ext_resource type="PackedScene" uid="uid://c327jqrscdpl6" path="res://models/NatureKit/flower_purpleA.glb" id="5_k5nfr"]
 [ext_resource type="PackedScene" uid="uid://de2rcptjtm3w6" path="res://models/NatureKit/flower_redA.glb" id="6_3jcyf"]
 
@@ -63,7 +63,6 @@ can_be = Dictionary[String, PackedScene]({
 "Camp": ExtResource("2_k54hl"),
 "Crops": ExtResource("3_bm0sa")
 })
-animation_player_path = NodePath("AnimationPlayer")
 despawn_animation_name = "Wildland_De_Spawn"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="BaseTile"]
@@ -77,19 +76,19 @@ script = ExtResource("5_bm0sa")
 [node name="Grass" type="Node3D" parent="BaseTile/WildlandStructure"]
 
 [node name="grass_large2" parent="BaseTile/WildlandStructure/Grass" instance=ExtResource("2_rn00i")]
-transform = Transform3D(3.31306, 0, 0, 0, 1.99627, 0, 0, 0, 2.24081, -0.086063, 0.0852419, 0.496645)
+transform = Transform3D(3.31306, 0, 0, 0, 1.99627, 0, 0, 0, 2.24081, -0.086063, 0.0852419, 0.824587)
 
 [node name="flower_yellowA2" parent="BaseTile/WildlandStructure/Grass" instance=ExtResource("3_k5nfr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.482398, 0.0185365, -0.0461887)
 
 [node name="grass_large3" parent="BaseTile/WildlandStructure/Grass" instance=ExtResource("2_rn00i")]
-transform = Transform3D(3.02183, 0, 0, 0, 2.47691, 0, 0, 0, 3.32357, 0.076247, -0.0243449, -0.227683)
+transform = Transform3D(3.02183, 0, 0, 0, 2.47691, 0, 0, 0, 3.32357, 0.550795, -0.0243449, -0.227683)
 
 [node name="grass2" parent="BaseTile/WildlandStructure/Grass" instance=ExtResource("4_3jcyf")]
-transform = Transform3D(5.006, 0, 0, 0, 2.63629, 0, 0, 0, 5.006, 0.0585501, 0.101032, 0.175909)
+transform = Transform3D(5.006, 0, 0, 0, 2.63629, 0, 0, 0, 5.006, -0.301679, 0.101032, -0.10235)
 
 [node name="flower_purpleA2" parent="BaseTile/WildlandStructure/Grass" instance=ExtResource("5_k5nfr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0793945, 0, -0.557936)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.129138, 0, -0.557936)
 
 [node name="flower_redA2" parent="BaseTile/WildlandStructure/Grass" instance=ExtResource("6_3jcyf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.649157, 0, 0.094503)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.649157, 0, 0.261434)
