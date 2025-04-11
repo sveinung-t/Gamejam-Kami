@@ -1,0 +1,37 @@
+[gd_scene load_steps=9 format=3 uid="uid://in1xbhud03w6"]
+
+[ext_resource type="PackedScene" uid="uid://cuj8af2wnhhqb" path="res://tiles/BaseTile.tscn" id="1_mxwte"]
+[ext_resource type="PackedScene" uid="uid://c7kqgacq6iwwi" path="res://models/NatureKit/campfire_planks.glb" id="3_nb7ed"]
+[ext_resource type="PackedScene" uid="uid://bgykccjhm5jae" path="res://models/NatureKit/campfire_stones.glb" id="4_12vks"]
+[ext_resource type="PackedScene" uid="uid://d335284chd68m" path="res://models/NatureKit/tent_smallOpen.glb" id="4_nb7ed"]
+[ext_resource type="PackedScene" uid="uid://burp8ni3hql22" path="res://models/NatureKit/bed_floor.glb" id="5_12vks"]
+[ext_resource type="PackedScene" uid="uid://dwk1u5ddpnt12" path="res://models/NatureKit/grass_large.glb" id="6_hvp8b"]
+[ext_resource type="PackedScene" uid="uid://cqmsn7hk8go8j" path="res://models/NatureKit/plant_bushDetailed.glb" id="7_ef5nv"]
+[ext_resource type="PackedScene" uid="uid://buqxnxy64x1ng" path="res://models/NatureKit/log_stack.glb" id="8_ef5nv"]
+
+[node name="Campsite" type="Node3D"]
+
+[node name="BaseTile" parent="." instance=ExtResource("1_mxwte")]
+
+[node name="Site" type="Node3D" parent="BaseTile"]
+
+[node name="campfire_planks2" parent="BaseTile/Site" instance=ExtResource("3_nb7ed")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.516785, 0.0404053, 0.480835)
+
+[node name="campfire_stones2" parent="BaseTile/Site" instance=ExtResource("4_12vks")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.516785, 0.0404053, 0.480835)
+
+[node name="tent_smallOpen2" parent="BaseTile/Site" instance=ExtResource("4_nb7ed")]
+transform = Transform3D(-1.34183, 0, 0.871493, 0, 1.6, 0, -0.871493, 0, -1.34183, 0.291748, 0.0626221, -0.344238)
+
+[node name="bed_floor2" parent="BaseTile/Site" instance=ExtResource("5_12vks")]
+transform = Transform3D(-0.958845, 0, 0.283932, 0, 1, 0, -0.283932, 0, -0.958845, 0.217712, 0.0388184, -0.463379)
+
+[node name="grass_large2" parent="BaseTile/Site" instance=ExtResource("6_hvp8b")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -0.551697, 0, -0.515381)
+
+[node name="plant_bushDetailed2" parent="BaseTile/Site" instance=ExtResource("7_ef5nv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.750366, 0, 0.174194)
+
+[node name="log_stack2" parent="BaseTile/Site" instance=ExtResource("8_ef5nv")]
+transform = Transform3D(0.0429045, 0, -0.999079, 0, 1, 0, 0.999079, 0, 0.0429045, 0.568604, 0.0350342, 0.577637)
