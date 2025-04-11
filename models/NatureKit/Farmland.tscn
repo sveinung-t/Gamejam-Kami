@@ -1,0 +1,57 @@
+[gd_scene load_steps=7 format=3 uid="uid://bs6g5fmmjgo0e"]
+
+[ext_resource type="PackedScene" uid="uid://cuj8af2wnhhqb" path="res://tiles/BaseTile.tscn" id="1_msbbs"]
+[ext_resource type="PackedScene" uid="uid://da5tt3rxolgfw" path="res://models/NatureKit/crops_dirtDoubleRowEnd.glb" id="2_1ejek"]
+[ext_resource type="PackedScene" uid="uid://rmwahq5set4p" path="res://models/NatureKit/crops_cornStageD.glb" id="3_2s5qy"]
+[ext_resource type="PackedScene" uid="uid://psiv6wvoi1yu" path="res://models/NatureKit/platform_grass.glb" id="4_2s5qy"]
+[ext_resource type="PackedScene" uid="uid://b0cu0qv8xflqw" path="res://models/NatureKit/grass_leafsLarge.glb" id="5_aqbq6"]
+[ext_resource type="PackedScene" uid="uid://dotcc12ds1m6n" path="res://models/NatureKit/grass_leafs.glb" id="6_aqbq6"]
+
+[node name="Farm" type="Node3D"]
+
+[node name="BaseTile" parent="." instance=ExtResource("1_msbbs")]
+
+[node name="Node3D" type="Node3D" parent="BaseTile"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
+
+[node name="crops_dirtDoubleRowEnd4" parent="BaseTile/Node3D" instance=ExtResource("2_1ejek")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.601685, 0, -0.00354767)
+
+[node name="crops_dirtDoubleRowEnd5" parent="BaseTile/Node3D" instance=ExtResource("2_1ejek")]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0.398315, 0, -0.00354767)
+
+[node name="crops_cornStageD2" parent="BaseTile/Node3D" instance=ExtResource("3_2s5qy")]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0.270386, 0, -0.281616)
+
+[node name="crops_cornStageD3" parent="BaseTile/Node3D" instance=ExtResource("3_2s5qy")]
+transform = Transform3D(1.15407, 0, -0.328811, 0, 1.2, 0, 0.328811, 0, 1.15407, -0.0996094, 0, -0.281616)
+
+[node name="crops_cornStageD4" parent="BaseTile/Node3D" instance=ExtResource("3_2s5qy")]
+transform = Transform3D(0.823265, 0, 0.567657, 0, 1, 0, -0.567657, 0, 0.823265, -0.443848, 0, -0.281616)
+
+[node name="crops_cornStageD5" parent="BaseTile/Node3D" instance=ExtResource("3_2s5qy")]
+transform = Transform3D(-0.876954, 0, -0.202364, 0, 0.9, 0, 0.202364, 0, -0.876954, -0.443179, 0, 0.354944)
+
+[node name="crops_cornStageD6" parent="BaseTile/Node3D" instance=ExtResource("3_2s5qy")]
+transform = Transform3D(-1.19845, 0, 0.0608997, 0, 1.2, 0, -0.0608997, 0, -1.19845, -0.082658, 0, 0.271751)
+
+[node name="crops_cornStageD7" parent="BaseTile/Node3D" instance=ExtResource("3_2s5qy")]
+transform = Transform3D(-0.674547, 0, -0.738232, 0, 1, 0, 0.738232, 0, -0.674547, 0.252766, 0, 0.194349)
+
+[node name="platform_grass2" parent="BaseTile/Node3D" instance=ExtResource("4_2s5qy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.372742, 0, 0.616699)
+
+[node name="platform_grass3" parent="BaseTile/Node3D" instance=ExtResource("4_2s5qy")]
+transform = Transform3D(0.636852, 0, 0.484169, 0, 0.8, 0, -0.484169, 0, 0.636852, -0.583923, 0, -0.585571)
+
+[node name="grass_leafsLarge2" parent="BaseTile/Node3D" instance=ExtResource("5_aqbq6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.450134, 0, 0.642212)
+
+[node name="grass_leafsLarge3" parent="BaseTile/Node3D" instance=ExtResource("5_aqbq6")]
+transform = Transform3D(1.12928, 0, 0.266226, 0, 1.60548, 0, -0.268721, 0, 1.1188, 0.433594, 0, -0.706421)
+
+[node name="grass_leafs2" parent="BaseTile/Node3D" instance=ExtResource("6_aqbq6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.543274, 0.0444336, -0.65625)
+
+[node name="grass_leafs3" parent="BaseTile/Node3D" instance=ExtResource("6_aqbq6")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0.533936, 0.0695801, 0.61499)

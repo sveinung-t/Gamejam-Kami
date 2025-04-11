@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://c3hjtaqyniouo"]
+[gd_scene load_steps=12 format=3 uid="uid://c3hjtaqyniouo"]
 
 [ext_resource type="PackedScene" uid="uid://cuj8af2wnhhqb" path="res://tiles/BaseTile.tscn" id="1_okhe4"]
 [ext_resource type="PackedScene" uid="uid://in1xbhud03w6" path="res://tiles/Campsite.tscn" id="2_k54hl"]
 [ext_resource type="PackedScene" uid="uid://dwk1u5ddpnt12" path="res://models/NatureKit/grass_large.glb" id="2_rn00i"]
 [ext_resource type="Animation" uid="uid://ctsbijmet81wb" path="res://Animations/Wildland_De_Spawn.res" id="2_w4hqv"]
+[ext_resource type="PackedScene" uid="uid://bs6g5fmmjgo0e" path="res://models/NatureKit/Farmland.tscn" id="3_5kwc0"]
 [ext_resource type="PackedScene" uid="uid://bqyo8sox2evxg" path="res://models/NatureKit/flower_yellowA.glb" id="3_k5nfr"]
 [ext_resource type="PackedScene" uid="uid://djrflv5uphikv" path="res://models/NatureKit/grass.glb" id="4_3jcyf"]
 [ext_resource type="PackedScene" uid="uid://c327jqrscdpl6" path="res://models/NatureKit/flower_purpleA.glb" id="5_k5nfr"]
@@ -58,7 +59,8 @@ _data = {
 
 [node name="BaseTile" parent="." instance=ExtResource("1_okhe4")]
 can_be = Dictionary[String, PackedScene]({
-"Camp": ExtResource("2_k54hl")
+"Camp": ExtResource("2_k54hl"),
+"Crops": ExtResource("3_5kwc0")
 })
 despawn_animation_name = "Wildland_De_Spawn"
 
