@@ -36,6 +36,7 @@ func _on_tile_body_mouse_exited() -> void:
 	pass
 
 func _on_tile_body_input_event(_camera: Node, event: InputEvent, _event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
+	print(self)
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		SignalBus.emit_signal("tile_select", self, can_be)
 
@@ -56,6 +57,7 @@ func _on_tile_change(scene: PackedScene) -> void:
 		new_tile.position = old_tile.position
 		container.remove_child(old_tile)
 		container.add_child(new_tile)
+		new_tile.owner = container
 		old_tile.queue_free()
 		SignalBus.emit_signal("tile_deselect")
 
