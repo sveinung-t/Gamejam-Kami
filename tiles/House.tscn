@@ -1,0 +1,138 @@
+[gd_scene load_steps=15 format=3 uid="uid://ceavo7lgpirwr"]
+
+[ext_resource type="PackedScene" uid="uid://cuj8af2wnhhqb" path="res://tiles/BaseTile.tscn" id="1_jxcix"]
+[ext_resource type="PackedScene" uid="uid://cyt0mdrvetcn3" path="res://models/FantasyTown/wallWoodDoor.glb" id="2_82wf3"]
+[ext_resource type="Animation" uid="uid://cnrg3d0jjhkko" path="res://Animations/House_De_Spawn.res" id="2_ur3jn"]
+[ext_resource type="PackedScene" uid="uid://d1b7ve6oxcork" path="res://models/FantasyTown/wallWoodCornerDiagonal.glb" id="3_hp5tg"]
+[ext_resource type="PackedScene" uid="uid://ckbxuedt8geep" path="res://models/FantasyTown/wallWoodHalf.glb" id="4_25eco"]
+[ext_resource type="PackedScene" uid="uid://d0jq0qxr6dt2n" path="res://models/FantasyTown/roofGableDetail.glb" id="5_mp18r"]
+[ext_resource type="PackedScene" uid="uid://dq60swhq61yuk" path="res://models/FantasyTown/roofWindow.glb" id="6_ur3jn"]
+[ext_resource type="PackedScene" uid="uid://bob46etoi5cwk" path="res://models/FantasyTown/roofPoint.glb" id="7_a73uc"]
+[ext_resource type="PackedScene" uid="uid://ctcjaoi8363e0" path="res://models/FantasyTown/roofRight.glb" id="8_yv3k8"]
+[ext_resource type="PackedScene" uid="uid://bwg1bvguhxaiy" path="res://models/FantasyTown/roofLeft.glb" id="9_anksm"]
+[ext_resource type="PackedScene" uid="uid://d1myqmp25eqxy" path="res://models/FantasyTown/wallWoodWindowRound.glb" id="10_76vkb"]
+[ext_resource type="PackedScene" uid="uid://w12ae666qtu" path="res://models/FantasyTown/pillarWood.glb" id="11_njq3a"]
+
+[sub_resource type="Animation" id="Animation_ibuvo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HouseStructure:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HouseStructure:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HouseStructure:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e2nf0"]
+_data = {
+&"House_De_Spawn": ExtResource("2_ur3jn"),
+&"RESET": SubResource("Animation_ibuvo")
+}
+
+[node name="House" type="Node3D"]
+
+[node name="BaseTile" parent="." instance=ExtResource("1_jxcix")]
+despawn_animation_name = "House_De_Spawn"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BaseTile"]
+libraries = {
+&"": SubResource("AnimationLibrary_e2nf0")
+}
+
+[node name="HouseStructure" type="Node3D" parent="BaseTile"]
+
+[node name="wallWoodDoor2" parent="BaseTile/HouseStructure" instance=ExtResource("2_82wf3")]
+transform = Transform3D(-2.62268e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.62268e-08, 0.00741163, 0, 0.263087)
+
+[node name="wallWoodCornerDiagonal2" parent="BaseTile/HouseStructure" instance=ExtResource("3_hp5tg")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -0.531555, 0, -0.275826)
+
+[node name="wallWoodCornerDiagonal3" parent="BaseTile/HouseStructure" instance=ExtResource("3_hp5tg")]
+transform = Transform3D(-2.62268e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.62268e-08, -0.534302, 0, 0.2575)
+
+[node name="wallWoodCornerDiagonal4" parent="BaseTile/HouseStructure" instance=ExtResource("3_hp5tg")]
+transform = Transform3D(-0.6, 0, -5.24537e-08, 0, 0.6, 0, 5.24537e-08, 0, -0.6, 0.561157, 0, 0.263359)
+
+[node name="wallWoodCornerDiagonal5" parent="BaseTile/HouseStructure" instance=ExtResource("3_hp5tg")]
+transform = Transform3D(-2.62268e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.62268e-08, 0.553772, 0, -0.27668)
+
+[node name="wallWoodHalf2" parent="BaseTile/HouseStructure" instance=ExtResource("4_25eco")]
+transform = Transform3D(-2.62268e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.62268e-08, 0.00878906, 0, -0.821968)
+
+[node name="wallWoodHalf3" parent="BaseTile/HouseStructure" instance=ExtResource("4_25eco")]
+transform = Transform3D(-2.62268e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.62268e-08, 0.00878906, 0.297607, -0.821968)
+
+[node name="HouseRoof" type="Node3D" parent="BaseTile/HouseStructure"]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0.6, -0.161934)
+
+[node name="roofGableDetail2" parent="BaseTile/HouseStructure/HouseRoof" instance=ExtResource("5_mp18r")]
+transform = Transform3D(-1.19526e-07, 0, 0.8283, 0, 1.5, 0, -2.73444, 0, -3.62061e-08, 0, 0.522461, 0.296269)
+
+[node name="roofWindow2" parent="BaseTile/HouseStructure/HouseRoof" instance=ExtResource("6_ur3jn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.843404, 0, 0.280711)
+
+[node name="roofWindow3" parent="BaseTile/HouseStructure/HouseRoof" instance=ExtResource("6_ur3jn")]
+transform = Transform3D(-1, 0, -8.74227e-08, 0, 1, 0, 8.74227e-08, 0, -1, -0.843, 0, 0.281)
+
+[node name="roofPoint2" parent="BaseTile/HouseStructure/HouseRoof" instance=ExtResource("7_a73uc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.577748, 0.294456)
+visible = false
+
+[node name="roofRight2" parent="BaseTile/HouseStructure/HouseRoof" instance=ExtResource("8_yv3k8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.845744, 0, -0.703938)
+
+[node name="roofRight3" parent="BaseTile/HouseStructure/HouseRoof" instance=ExtResource("8_yv3k8")]
+transform = Transform3D(-1, 0, -8.74227e-08, 0, 1, 0, 8.74227e-08, 0, -1, -0.846, 0, 1.2799)
+
+[node name="roofLeft2" parent="BaseTile/HouseStructure/HouseRoof" instance=ExtResource("9_anksm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.846, 0, 1.28)
+
+[node name="roofLeft3" parent="BaseTile/HouseStructure/HouseRoof" instance=ExtResource("9_anksm")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.846, 0, -0.704)
+
+[node name="wallWoodWindowRound2" parent="BaseTile/HouseStructure/HouseRoof" instance=ExtResource("10_76vkb")]
+transform = Transform3D(-4.37114e-08, 0, 0.807781, 0.27275, 0.628019, 9.63061e-09, -0.962085, 0.178043, -3.39705e-08, 0, 0.112534, 0.714315)
+
+[node name="wallWoodWindowRound3" parent="BaseTile/HouseStructure/HouseRoof" instance=ExtResource("10_76vkb")]
+transform = Transform3D(-4.20599e-08, 7.76909e-09, -0.807781, 0.27228, 0.628106, 0, 0.962218, -0.177736, -3.53092e-08, 0, 0.112534, -0.229899)
+
+[node name="pillarWood2" parent="BaseTile/HouseStructure" instance=ExtResource("11_njq3a")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -0.75, 0, -0.75)
+
+[node name="pillarWood4" parent="BaseTile/HouseStructure" instance=ExtResource("11_njq3a")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -0.75, 0, 0.75)
+
+[node name="pillarWood5" parent="BaseTile/HouseStructure" instance=ExtResource("11_njq3a")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0.75, 0, 0.75)
+
+[node name="pillarWood3" parent="BaseTile/HouseStructure" instance=ExtResource("11_njq3a")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0.75, 0, -0.75)
