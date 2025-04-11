@@ -1,7 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://in1xbhud03w6"]
+[gd_scene load_steps=13 format=3 uid="uid://in1xbhud03w6"]
 
 [ext_resource type="PackedScene" uid="uid://cuj8af2wnhhqb" path="res://tiles/BaseTile.tscn" id="1_mxwte"]
+[ext_resource type="PackedScene" uid="uid://ceavo7lgpirwr" path="res://tiles/House.tscn" id="2_f6txe"]
 [ext_resource type="PackedScene" uid="uid://c7kqgacq6iwwi" path="res://models/NatureKit/campfire_planks.glb" id="3_nb7ed"]
+[ext_resource type="Animation" uid="uid://b0gnmbt16o3i3" path="res://Animations/Campsite_De_Spawn.res" id="3_xs10v"]
 [ext_resource type="PackedScene" uid="uid://bgykccjhm5jae" path="res://models/NatureKit/campfire_stones.glb" id="4_12vks"]
 [ext_resource type="PackedScene" uid="uid://d335284chd68m" path="res://models/NatureKit/tent_smallOpen.glb" id="4_nb7ed"]
 [ext_resource type="PackedScene" uid="uid://burp8ni3hql22" path="res://models/NatureKit/bed_floor.glb" id="5_12vks"]
@@ -9,9 +11,63 @@
 [ext_resource type="PackedScene" uid="uid://cqmsn7hk8go8j" path="res://models/NatureKit/plant_bushDetailed.glb" id="7_ef5nv"]
 [ext_resource type="PackedScene" uid="uid://buqxnxy64x1ng" path="res://models/NatureKit/log_stack.glb" id="8_ef5nv"]
 
+[sub_resource type="Animation" id="Animation_5ek8j"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Site:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Site:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Site:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f6txe"]
+_data = {
+&"Campsite_De_Spawn": ExtResource("3_xs10v"),
+&"RESET": SubResource("Animation_5ek8j")
+}
+
 [node name="Campsite" type="Node3D"]
 
 [node name="BaseTile" parent="." instance=ExtResource("1_mxwte")]
+can_be = Dictionary[String, PackedScene]({
+"House": ExtResource("2_f6txe")
+})
+despawn_animation_name = "Campsite_De_Spawn"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BaseTile"]
+libraries = {
+&"": SubResource("AnimationLibrary_f6txe")
+}
 
 [node name="Site" type="Node3D" parent="BaseTile"]
 
