@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cuj8af2wnhhqb"]
 
 [ext_resource type="PackedScene" uid="uid://bt03qb3oi11qv" path="res://models/NatureKit/cliff_blockHalf_rock.glb" id="1_jnp2x"]
-[ext_resource type="Script" uid="uid://drarqfxdrbegu" path="res://scripts/base_tile.gd" id="1_lqty5"]
+[ext_resource type="Script" uid="uid://drarqfxdrbegu" path="res://scripts/BaseTile.gd" id="1_lqty5"]
 [ext_resource type="PackedScene" uid="uid://d301nvw88xscc" path="res://models/NatureKit/ground_grass.glb" id="2_lqty5"]
 [ext_resource type="PackedScene" uid="uid://dfxd3y8s4r5ef" path="res://tiles/SelectedTile.tscn" id="3_lqty5"]
 

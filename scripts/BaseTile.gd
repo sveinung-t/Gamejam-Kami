@@ -7,8 +7,9 @@ extends Node3D
 @onready var anim_player: AnimationPlayer = get_node(animation_player_path)
 
 func _ready() -> void:
-	SignalBus.connect("tile_select", onSelect)
-	SignalBus.connect("tile_deselect", onDeselect)
+	SignalBus.connect("tile_select", _on_select)
+	SignalBus.connect("tile_deselect", _on_deselect)
+	SignalBus.connect("tile_change", _on_tile_change)
 	
 		# Connect animation finished signal
 	if anim_player and not anim_player.is_connected("animation_finished", _on_animation_finished):
@@ -28,17 +29,19 @@ func _on_tile_body_mouse_exited() -> void:
 
 func _on_tile_body_input_event(_camera: Node, event: InputEvent, _event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		print(can_be)
 		SignalBus.emit_signal("tile_select", self, can_be)
 
-func onSelect(node: Node3D, _can_be: Dictionary[String, PackedScene]) -> void:
+func _on_select(node: Node3D, _can_be: Dictionary[String, PackedScene]) -> void:
 	if node == self:
 		$Selected.visible = !$Selected.visible
 	else:
 		$Selected.visible = false
 
-func onDeselect() -> void:
+func _on_deselect() -> void:
 	$Selected.visible = false
+
+func _on_tile_change(scene: PackedScene) -> void:
+	self.owner
 
 #Call this externally to play despawn animation
 func start_despawn():

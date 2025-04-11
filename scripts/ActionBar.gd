@@ -1,5 +1,7 @@
 extends Node
 
+const btnScript = preload("res://scripts/ActionBarBtn.gd")
+
 func _ready() -> void:
 	SignalBus.connect("tile_select", _on_tile_select)
 
@@ -18,9 +20,10 @@ func _on_tile_select(_node: Node3D, can_be: Dictionary[String, PackedScene]):
 		
 		var scene: PackedScene = can_be[k]
 		newBtn.text = k
+		newBtn.set_script(btnScript)
+		newBtn.scene = scene
 		hotbar.add_child(newBtn)
 	)
 	
-	print(hotbar.get_children().size())
 	if (hotbar.get_children().size()):
 		actionbar.visible = true

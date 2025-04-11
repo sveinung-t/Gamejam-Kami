@@ -1,13 +1,13 @@
 extends Node
 
-@warning_ignore("unused_signal")
+@warning_ignore_start("unused_signal")
 signal tile_select(node: Node3D, can_be: Dictionary[String, PackedScene])
-@warning_ignore("unused_signal")
 signal tile_deselect()
-@warning_ignore("unused_signal")
+signal tile_change(scene: PackedScene)
+signal tile_despawned()
 signal close_main_menu()
-@warning_ignore("unused_signal")
 signal toggle_main_menu()
+@warning_ignore_restore("unused_signal")
 
 func _input(event):
 	if event is InputEventKey:
