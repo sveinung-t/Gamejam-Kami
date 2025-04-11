@@ -24,10 +24,12 @@ func _ready() -> void:
 		print("Missing or invalid despawn animation for", name)
 
 func _on_tile_body_mouse_entered() -> void:
-	self.position.y = 0.1
+	# animate entering hover of a tile
+	pass
 
 func _on_tile_body_mouse_exited() -> void:
-	self.position.y = 0.0
+	# animate leaving hover of a tile
+	pass
 
 func _on_tile_body_input_event(_camera: Node, event: InputEvent, _event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
