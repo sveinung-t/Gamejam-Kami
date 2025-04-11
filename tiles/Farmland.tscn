@@ -1,15 +1,67 @@
-[gd_scene load_steps=7 format=3 uid="uid://bs6g5fmmjgo0e"]
+[gd_scene load_steps=10 format=3 uid="uid://bs6g5fmmjgo0e"]
 
 [ext_resource type="PackedScene" uid="uid://cuj8af2wnhhqb" path="res://tiles/BaseTile.tscn" id="1_msbbs"]
 [ext_resource type="PackedScene" uid="uid://da5tt3rxolgfw" path="res://models/NatureKit/crops_dirtDoubleRowEnd.glb" id="2_1ejek"]
+[ext_resource type="Animation" uid="uid://b6b6kn4hnjnxi" path="res://Animations/Farmland_De_Spawn.res" id="2_stp50"]
 [ext_resource type="PackedScene" uid="uid://rmwahq5set4p" path="res://models/NatureKit/crops_cornStageD.glb" id="3_2s5qy"]
 [ext_resource type="PackedScene" uid="uid://psiv6wvoi1yu" path="res://models/NatureKit/platform_grass.glb" id="4_2s5qy"]
 [ext_resource type="PackedScene" uid="uid://b0cu0qv8xflqw" path="res://models/NatureKit/grass_leafsLarge.glb" id="5_aqbq6"]
 [ext_resource type="PackedScene" uid="uid://dotcc12ds1m6n" path="res://models/NatureKit/grass_leafs.glb" id="6_aqbq6"]
 
+[sub_resource type="Animation" id="Animation_stp50"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.05, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node3D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node3D:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w1bdb"]
+_data = {
+&"Farmland_De_Spawn": ExtResource("2_stp50"),
+&"RESET": SubResource("Animation_stp50")
+}
+
 [node name="Farm" type="Node3D"]
 
 [node name="BaseTile" parent="." instance=ExtResource("1_msbbs")]
+despawn_animation_name = "Farmland_De_Spawn"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BaseTile"]
+libraries = {
+&"": SubResource("AnimationLibrary_w1bdb")
+}
 
 [node name="Node3D" type="Node3D" parent="BaseTile"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
