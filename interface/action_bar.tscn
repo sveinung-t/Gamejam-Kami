@@ -14,6 +14,7 @@ grow_vertical = 0
 mouse_filter = 1
 
 [node name="ActionBar" type="PanelContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -40,7 +41,3 @@ theme_override_constants/margin_bottom = 8
 
 [node name="Hotbar" type="BoxContainer" parent="ActionBar/Margins"]
 layout_mode = 2
-
-[node name="Action" type="Button" parent="ActionBar/Margins/Hotbar"]
-layout_mode = 2
-text = "🏠"
