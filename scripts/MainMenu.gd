@@ -5,7 +5,6 @@ extends Control
 @onready var randomizeBtn = $MarginContainer/VBoxContainer/Randomize
 @onready var newgameBtn = $MarginContainer/VBoxContainer/Newgame
 @onready var exitBtn = $MarginContainer/VBoxContainer/Exit
-var rng = RandomNumberGenerator.new()
 
 func _ready() -> void:
 	randomizeBtn.pressed.connect(setNewSeed)
@@ -16,14 +15,15 @@ func _ready() -> void:
 	SignalBus.connect("toggle_main_menu", _on_toggle_menu)
 	
 func setNewSeed() -> void:
-	rng.randomize()
-	seedEntry.text = str(rng.seed)
+	
+	RngContext.c.randomize()
+	seedEntry.text = str(RngContext.c.seed)
 
 func newGame() -> void:
 	var seedText: String = seedEntry.text
-	rng.seed = seedText.hash()
+	RngContext.c.seed = seedText.hash()
 	
-	print(rng.seed)
+	print(RngContext.c.seed)
 
 func exitGame() -> void:
 	get_tree().quit()

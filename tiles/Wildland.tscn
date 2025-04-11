@@ -1,12 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://c3hjtaqyniouo"]
+[gd_scene load_steps=13 format=3 uid="uid://c3hjtaqyniouo"]
 
 [ext_resource type="PackedScene" uid="uid://cuj8af2wnhhqb" path="res://tiles/BaseTile.tscn" id="1_okhe4"]
 [ext_resource type="PackedScene" uid="uid://in1xbhud03w6" path="res://tiles/Campsite.tscn" id="2_k54hl"]
 [ext_resource type="PackedScene" uid="uid://dwk1u5ddpnt12" path="res://models/NatureKit/grass_large.glb" id="2_rn00i"]
 [ext_resource type="Animation" uid="uid://ctsbijmet81wb" path="res://Animations/Wildland_De_Spawn.res" id="2_w4hqv"]
-[ext_resource type="PackedScene" uid="uid://bs6g5fmmjgo0e" path="res://models/NatureKit/Farmland.tscn" id="3_5kwc0"]
+[ext_resource type="PackedScene" path="res://tiles/Farmland.tscn" id="3_bm0sa"]
 [ext_resource type="PackedScene" uid="uid://bqyo8sox2evxg" path="res://models/NatureKit/flower_yellowA.glb" id="3_k5nfr"]
 [ext_resource type="PackedScene" uid="uid://djrflv5uphikv" path="res://models/NatureKit/grass.glb" id="4_3jcyf"]
+[ext_resource type="Script" uid="uid://ks2jsgu04g6n" path="res://scripts/Rescaler.gd" id="5_bm0sa"]
 [ext_resource type="PackedScene" uid="uid://c327jqrscdpl6" path="res://models/NatureKit/flower_purpleA.glb" id="5_k5nfr"]
 [ext_resource type="PackedScene" uid="uid://de2rcptjtm3w6" path="res://models/NatureKit/flower_redA.glb" id="6_3jcyf"]
 
@@ -60,7 +61,7 @@ _data = {
 [node name="BaseTile" parent="." instance=ExtResource("1_okhe4")]
 can_be = Dictionary[String, PackedScene]({
 "Camp": ExtResource("2_k54hl"),
-"Crops": ExtResource("3_5kwc0")
+"Crops": ExtResource("3_bm0sa")
 })
 despawn_animation_name = "Wildland_De_Spawn"
 
@@ -70,21 +71,24 @@ libraries = {
 }
 
 [node name="WildlandStructure" type="Node3D" parent="BaseTile"]
+script = ExtResource("5_bm0sa")
 
-[node name="grass_large2" parent="BaseTile/WildlandStructure" instance=ExtResource("2_rn00i")]
+[node name="Grass" type="Node3D" parent="BaseTile/WildlandStructure"]
+
+[node name="grass_large2" parent="BaseTile/WildlandStructure/Grass" instance=ExtResource("2_rn00i")]
 transform = Transform3D(3.31306, 0, 0, 0, 1.99627, 0, 0, 0, 2.24081, -0.086063, 0.0852419, 0.496645)
 
-[node name="flower_yellowA2" parent="BaseTile/WildlandStructure" instance=ExtResource("3_k5nfr")]
+[node name="flower_yellowA2" parent="BaseTile/WildlandStructure/Grass" instance=ExtResource("3_k5nfr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.482398, 0.0185365, -0.0461887)
 
-[node name="grass_large3" parent="BaseTile/WildlandStructure" instance=ExtResource("2_rn00i")]
+[node name="grass_large3" parent="BaseTile/WildlandStructure/Grass" instance=ExtResource("2_rn00i")]
 transform = Transform3D(3.02183, 0, 0, 0, 2.47691, 0, 0, 0, 3.32357, 0.076247, -0.0243449, -0.227683)
 
-[node name="grass2" parent="BaseTile/WildlandStructure" instance=ExtResource("4_3jcyf")]
+[node name="grass2" parent="BaseTile/WildlandStructure/Grass" instance=ExtResource("4_3jcyf")]
 transform = Transform3D(5.006, 0, 0, 0, 2.63629, 0, 0, 0, 5.006, 0.0585501, 0.101032, 0.175909)
 
-[node name="flower_purpleA2" parent="BaseTile/WildlandStructure" instance=ExtResource("5_k5nfr")]
+[node name="flower_purpleA2" parent="BaseTile/WildlandStructure/Grass" instance=ExtResource("5_k5nfr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0793945, 0, -0.557936)
 
-[node name="flower_redA2" parent="BaseTile/WildlandStructure" instance=ExtResource("6_3jcyf")]
+[node name="flower_redA2" parent="BaseTile/WildlandStructure/Grass" instance=ExtResource("6_3jcyf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.649157, 0, 0.094503)

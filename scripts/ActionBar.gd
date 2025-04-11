@@ -7,8 +7,6 @@ const btnScript = preload("res://scripts/ActionBarBtn.gd")
 func _ready() -> void:
 	SignalBus.connect("tile_select", _on_tile_select)
 	SignalBus.connect("tile_deselect", _on_tile_deselect)
-	var actionbar = get_node(".")
-	var hotbar = get_node("Margins/Hotbar")
 
 func _on_tile_select(_node: Node3D, can_be: Dictionary[String, PackedScene]):
 	reset_actionbar()
