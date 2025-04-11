@@ -62,6 +62,7 @@ _data = {
 can_be = Dictionary[String, PackedScene]({
 "House": ExtResource("2_f6txe")
 })
+animation_player_path = NodePath("AnimationPlayer")
 despawn_animation_name = "Campsite_De_Spawn"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="BaseTile"]
