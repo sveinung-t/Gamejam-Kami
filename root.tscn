@@ -20,10 +20,19 @@ size = 10.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.866025, 0.353553, -0.353553, 0, 0.707107, 0.707107, 0.5, -0.612372, 0.612372, 0, 0, 0)
+light_color = Color(0.936236, 0.927146, 0.83007, 1)
 light_indirect_energy = 2.0
 light_volumetric_fog_energy = 2.0
 light_angular_distance = 5.0
 light_specular = 1.5
+light_bake_mode = 1
+shadow_enabled = true
+directional_shadow_mode = 0
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866025, 0.353554, 0.353553, 0, -0.707106, 0.707107, 0.5, -0.612373, -0.612372, 0, 0, 0)
+light_color = Color(0.812142, 0.664511, 0.530085, 1)
+light_energy = 0.5
 light_bake_mode = 1
 shadow_enabled = true
 directional_shadow_mode = 0
