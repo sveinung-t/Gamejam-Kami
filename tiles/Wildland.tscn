@@ -94,7 +94,7 @@ _data = {
 
 [node name="BaseTile" parent="." instance=ExtResource("1_okhe4")]
 can_be = Dictionary[String, PackedScene]({
-"Home": ExtResource("2_k54hl")
+"Shrine": ExtResource("2_k54hl")
 })
 despawn_animation_name = "Wildland_De_Spawn"
 

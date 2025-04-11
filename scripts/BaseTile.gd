@@ -41,7 +41,15 @@ func _on_deselect() -> void:
 	$Selected.visible = false
 
 func _on_tile_change(scene: PackedScene) -> void:
-	self.owner
+	if $Selected.visible:
+		var old_tile = self.owner
+		var container = old_tile.owner
+		var new_tile: Node3D = scene.instantiate()
+		new_tile.position = old_tile.position
+		container.remove_child(old_tile)
+		container.add_child(new_tile)
+		old_tile.queue_free()
+		SignalBus.emit_signal("tile_deselect")
 
 #Call this externally to play despawn animation
 func start_despawn():
