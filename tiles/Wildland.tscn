@@ -14,74 +14,26 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("grass_large2:scale")
+tracks/0/path = NodePath("WildlandStructure:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(3.31306, 1.99627, 2.24081)]
+"values": [Vector3(1, 1, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("flower_yellowA2:scale")
+tracks/1/path = NodePath("WildlandStructure:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(1, 1, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("grass_large3:scale")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(3.02183, 2.47691, 3.32357)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("grass2:scale")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(5.006, 2.63629, 5.006)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("flower_purpleA2:scale")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(1, 1, 1)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("flower_redA2:scale")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(1, 1, 1)]
+"values": [Vector3(0, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5kwc0"]
@@ -103,20 +55,22 @@ libraries = {
 &"": SubResource("AnimationLibrary_5kwc0")
 }
 
-[node name="grass_large2" parent="BaseTile" instance=ExtResource("2_rn00i")]
+[node name="WildlandStructure" type="Node3D" parent="BaseTile"]
+
+[node name="grass_large2" parent="BaseTile/WildlandStructure" instance=ExtResource("2_rn00i")]
 transform = Transform3D(3.31306, 0, 0, 0, 1.99627, 0, 0, 0, 2.24081, -0.086063, 0.0852419, 0.496645)
 
-[node name="flower_yellowA2" parent="BaseTile" instance=ExtResource("3_k5nfr")]
+[node name="flower_yellowA2" parent="BaseTile/WildlandStructure" instance=ExtResource("3_k5nfr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.482398, 0.0185365, -0.0461887)
 
-[node name="grass_large3" parent="BaseTile" instance=ExtResource("2_rn00i")]
+[node name="grass_large3" parent="BaseTile/WildlandStructure" instance=ExtResource("2_rn00i")]
 transform = Transform3D(3.02183, 0, 0, 0, 2.47691, 0, 0, 0, 3.32357, 0.076247, -0.0243449, -0.227683)
 
-[node name="grass2" parent="BaseTile" instance=ExtResource("4_3jcyf")]
+[node name="grass2" parent="BaseTile/WildlandStructure" instance=ExtResource("4_3jcyf")]
 transform = Transform3D(5.006, 0, 0, 0, 2.63629, 0, 0, 0, 5.006, 0.0585501, 0.101032, 0.175909)
 
-[node name="flower_purpleA2" parent="BaseTile" instance=ExtResource("5_k5nfr")]
+[node name="flower_purpleA2" parent="BaseTile/WildlandStructure" instance=ExtResource("5_k5nfr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0793945, 0, -0.557936)
 
-[node name="flower_redA2" parent="BaseTile" instance=ExtResource("6_3jcyf")]
+[node name="flower_redA2" parent="BaseTile/WildlandStructure" instance=ExtResource("6_3jcyf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.649157, 0, 0.094503)

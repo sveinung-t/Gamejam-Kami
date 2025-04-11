@@ -4,6 +4,7 @@ extends Node3D
 
 @export var animation_player_path: NodePath = NodePath("AnimationPlayer")
 @export var despawn_animation_name: String = ""
+@export var animation_speed: float = 3
 @onready var anim_player: AnimationPlayer = get_node(animation_player_path)
 
 func _ready() -> void:
@@ -13,6 +14,7 @@ func _ready() -> void:
 	
 		# Connect animation finished signal
 	if anim_player and not anim_player.is_connected("animation_finished", _on_animation_finished):
+		anim_player.speed_scale = animation_speed
 		anim_player.connect("animation_finished", _on_animation_finished)
 
 	# Auto-play animation backward (spawn in)
@@ -54,6 +56,7 @@ func _on_tile_change(scene: PackedScene) -> void:
 #Call this externally to play despawn animation
 func start_despawn():
 	if despawn_animation_name != "" and anim_player.has_animation(despawn_animation_name):
+		anim_player.speed_scale = animation_speed
 		anim_player.play(despawn_animation_name)
 	else:
 		print("Cannot play despawn animation on", name)
