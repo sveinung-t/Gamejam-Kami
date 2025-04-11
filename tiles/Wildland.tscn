@@ -75,6 +75,7 @@ libraries = {
 script = ExtResource("5_bm0sa")
 
 [node name="Grass" type="Node3D" parent="BaseTile/WildlandStructure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0605065, 0)
 
 [node name="grass_large2" parent="BaseTile/WildlandStructure/Grass" instance=ExtResource("2_rn00i")]
 transform = Transform3D(3.31306, 0, 0, 0, 1.99627, 0, 0, 0, 2.24081, -0.086063, 0.0852419, 0.824587)

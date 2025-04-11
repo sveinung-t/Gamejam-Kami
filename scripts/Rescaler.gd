@@ -1,7 +1,6 @@
 extends Node
 
 @export var scaleVariance = 0.1
-@export var maxScale = 1.5
 @export var angleVariance = 60
 @onready var rng = RngContext.c
 

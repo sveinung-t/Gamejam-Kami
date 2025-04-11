@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://5mdusql7ppnr"]
+[gd_scene load_steps=14 format=3 uid="uid://5mdusql7ppnr"]
 
 [ext_resource type="PackedScene" uid="uid://cuj8af2wnhhqb" path="res://tiles/BaseTile.tscn" id="1_cm4il"]
 [ext_resource type="Animation" uid="uid://c451l2ktxa1pr" path="res://Animations/Mountain_De_Spawn.res" id="2_uclab"]
 [ext_resource type="PackedScene" uid="uid://bqk77e8icd21s" path="res://models/NatureKit/stone_tallC.glb" id="2_uiasq"]
+[ext_resource type="Script" uid="uid://ks2jsgu04g6n" path="res://scripts/Rescaler.gd" id="3_1j2uf"]
 [ext_resource type="PackedScene" uid="uid://dff21a1gpvjwi" path="res://models/NatureKit/stone_tallJ.glb" id="3_u5tbx"]
 [ext_resource type="PackedScene" uid="uid://bmokrumj26not" path="res://models/NatureKit/stone_smallTopB.glb" id="4_6tr7e"]
 [ext_resource type="PackedScene" uid="uid://bqc7bmxfqodyn" path="res://models/NatureKit/stone_smallFlatA.glb" id="5_ydpsf"]
@@ -69,26 +70,30 @@ libraries = {
 
 [node name="MountainStructure" type="Node3D" parent="BaseTile"]
 
-[node name="stone_tallC2" parent="BaseTile/MountainStructure" instance=ExtResource("2_uiasq")]
-transform = Transform3D(1.73475, 0, 0, 0, 1.54417, 0, 0, 0, 2.24584, 0.0857488, -1.19209e-07, 0.105523)
+[node name="Node3D" type="Node3D" parent="BaseTile/MountainStructure"]
+script = ExtResource("3_1j2uf")
+scaleVariance = 0.2
 
-[node name="stone_tallJ2" parent="BaseTile/MountainStructure" instance=ExtResource("3_u5tbx")]
-transform = Transform3D(1.41395, 0, 0, 0, 1, 0, 0, 0, 1.30885, -0.5202, 0, 0.657345)
+[node name="stone_tallC2" parent="BaseTile/MountainStructure/Node3D" instance=ExtResource("2_uiasq")]
+transform = Transform3D(3, 0, 0, 0, 2.671, 0, 0, 0, 3.884, 0.0857488, -1.19209e-07, 0.105523)
 
-[node name="stone_smallTopB2" parent="BaseTile/MountainStructure" instance=ExtResource("4_6tr7e")]
-transform = Transform3D(1.80631, 0, 0, 0, 3.0222, 0, 0, 0, 1.89378, -0.139118, 0, 0.416899)
+[node name="stone_tallJ2" parent="BaseTile/MountainStructure/Node3D" instance=ExtResource("3_u5tbx")]
+transform = Transform3D(1.978, 0, 0, 0, 1.4, 0, 0, 0, 1.832, -0.660154, 0, 0.657345)
 
-[node name="stone_smallFlatA2" parent="BaseTile/MountainStructure" instance=ExtResource("5_ydpsf")]
+[node name="stone_smallTopB2" parent="BaseTile/MountainStructure/Node3D" instance=ExtResource("4_6tr7e")]
+transform = Transform3D(2, 0, 0, 0, 3.347, 0, 0, 0, 2.097, -0.139118, 0, 0.514921)
+
+[node name="stone_smallFlatA2" parent="BaseTile/MountainStructure/Node3D" instance=ExtResource("5_ydpsf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.675925, 0.050338, 0.55808)
 
-[node name="stone_largeD2" parent="BaseTile/MountainStructure" instance=ExtResource("6_g2v0a")]
+[node name="stone_largeD2" parent="BaseTile/MountainStructure/Node3D" instance=ExtResource("6_g2v0a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.462155, -0.227839, -0.0714709)
 
-[node name="stone_largeB2" parent="BaseTile/MountainStructure" instance=ExtResource("7_2e8ob")]
-transform = Transform3D(1, 0, 0, 0, 1.6509, 0, 0, 0, 1, 0.259461, -0.281547, -0.414592)
+[node name="stone_largeB2" parent="BaseTile/MountainStructure/Node3D" instance=ExtResource("7_2e8ob")]
+transform = Transform3D(1.211, 0, 0, 0, 2, 0, 0, 0, 1.211, 0.259461, -0.281547, -0.590495)
 
-[node name="stone_largeA2" parent="BaseTile/MountainStructure" instance=ExtResource("8_71l7x")]
+[node name="stone_largeA2" parent="BaseTile/MountainStructure/Node3D" instance=ExtResource("8_71l7x")]
 transform = Transform3D(0.999999, 0, 0, 0, 1, 0, 0, 0, 0.999999, -0.2064, -0.0331372, -0.388086)
 
-[node name="stone_smallC2" parent="BaseTile/MountainStructure" instance=ExtResource("9_q2sj7")]
+[node name="stone_smallC2" parent="BaseTile/MountainStructure/Node3D" instance=ExtResource("9_q2sj7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.652658, 0.00700402, -0.0118237)
