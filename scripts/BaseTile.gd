@@ -4,7 +4,7 @@ extends Node3D
 
 @export var animation_player_path: NodePath = NodePath("AnimationPlayer")
 @export var despawn_animation_name: String = ""
-@export var animation_speed: float = 3
+@export var animation_speed: float = 4
 @onready var anim_player: AnimationPlayer = get_node(animation_player_path)
 
 func _ready() -> void:
